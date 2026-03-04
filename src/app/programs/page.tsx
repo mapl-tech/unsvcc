@@ -15,7 +15,7 @@ export default function ProgramsPage() {
       {/* ==================== HERO BANNER ==================== */}
       <section className="relative overflow-hidden" style={{ minHeight: '340px' }}>
         <img
-          src="/images/programs/programs-hero.jpg"
+          src="/images/hero/programs-hero.jpg"
           alt="Colorful tulips representing community growth"
           className="absolute inset-0 w-full h-full object-cover"
         />
@@ -78,7 +78,7 @@ export default function ProgramsPage() {
             </ScrollReveal>
             <ScrollReveal delay={2} className="rounded-2xl overflow-hidden shadow-card">
               <img
-                src="/images/our-community.jpg"
+                src="/images/community/our-community.jpg"
                 alt="Seniors at a UNSVCC community event"
                 className="w-full h-auto object-cover"
                 style={{ aspectRatio: '10/7' }}

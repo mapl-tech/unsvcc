@@ -88,7 +88,7 @@ export default function ProgramsContent() {
                 <ScrollReveal key={key} delay={getDelay(index)}>
                   <button
                     type="button"
-                    className="program-card bg-white rounded-2xl overflow-hidden shadow-card card-lift text-left w-full"
+                    className="program-card bg-white rounded-2xl overflow-hidden shadow-card card-lift text-left w-full h-full flex flex-col"
                     onClick={() => openModal(key)}
                     aria-label={`Learn more about ${program.title}`}
                   >
@@ -97,17 +97,17 @@ export default function ProgramsContent() {
                       alt={program.title}
                       className="w-full h-52 object-cover"
                     />
-                    <div className="p-6">
+                    <div className="p-6 flex flex-col flex-1">
                       <h3 className="font-heading font-bold text-charcoal text-lg leading-snug">
                         {program.title}
                       </h3>
                       <p
-                        className="font-body text-warm-gray text-sm mt-3 card-body-text"
+                        className="font-body text-warm-gray text-sm mt-3 card-body-text line-clamp-3"
                         style={{ lineHeight: 1.7 }}
                       >
                         {program.body}
                       </p>
-                      <span className="link-arrow mt-5 inline-flex text-sm">
+                      <span className="link-arrow mt-auto pt-5 inline-flex text-sm">
                         Learn More
                         <ArrowRightIcon width={14} height={14} />
                       </span>

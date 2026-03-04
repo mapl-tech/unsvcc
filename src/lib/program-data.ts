@@ -42,10 +42,10 @@ export const programData: Record<string, Program> = {
     image: '/images/programs/housing.png',
     body: 'The Coalition Housing Support program provides members with rental apartment information stored in our national database for rent through the goodwill of some residential property management companies and building owners. The Coalition will continue negotiating with building owners and property management companies to provide reduced rent payments to members up to forty percent below market value, plus Cap-Rent. This means lower monthly payments with no annual increase in monthly payments for seniors.\n\nThe Coalition rental housing support program is easy when a Coalition member is searching for a place to call home. They simply call the Coalition office and speak to a Housing Support staff member, who will access the housing database and provide that member with the housing information available.\n\nThe coalition will also purchase distressed and foreclosed properties, renovate or resell them to people over 55 who are trying to re-establish their lives by purchasing, a place to call home with the downpayment assistance from the coalition membership pool funds program, called the homeownership partnership plan for seniors ware the coalition will subsiding up to 55% of the down payment needed to purchase a place to called MYOWMPLACE.',
   },
-  familysupport: {
-    title: 'Family Support Wellness Safety Check',
-    image: '/images/programs/family-support.png',
-    body: 'The United Senior Citizen Voice-for-Change Coalition gives its members easy access to professional and affordable legal advice and representation at reduced rates from a group of panel lawyers and paralegal services. Members are entitled to basic estate planning documents, including your Will, Living Will, and Power of Attorney preparation. The Coalition does not provide any legal services or provide any legal information or representation., when a member has questions on legal issue and needs advice, they are directed to a panel lawyers or paralegal professionals and receive legal advice, consultation, or representation on several legal matters, including writing letters or making phone calls on their behalf at reduced rates. Fee services are determined by your legal representative.',
+  shopping: {
+    title: 'Shopping Discount Program',
+    image: '/images/programs/shopping.png',
+    body: 'If you\'re on a fixed income and seeing food costs continually going up, or if you are struggling to make ends meet on a tight budget, you are not alone. In 2023, nearly 9 million adults over 50 struggled with food and housing insecurity issues, and the pandemic has only made matters worse. The Coalition can connect you with resources and assistance to help you put food on the table, and membership makes it easier to participate in the Coalition shopping discount program that provides specials or discount shopping from participating suppliers and service providers.',
   },
   incometax: {
     title: 'Income Tax Preparation',
@@ -57,14 +57,19 @@ export const programData: Record<string, Program> = {
     image: '/images/programs/life-insurance.png',
     body: 'Membership gives an individual who has a life insurance policy for more than ten years and has been in payment default for more than two months the opportunity to have the coalition continue the payment under certain terms and conditions set forth by the coalition.',
   },
-  shopping: {
-    title: 'Shopping Discount Program',
-    image: '/images/programs/shopping.png',
-    body: 'If you\'re on a fixed income and seeing food costs continually going up, or if you are struggling to make ends meet on a tight budget, you are not alone. In 2023, nearly 9 million adults over 50 struggled with food and housing insecurity issues, and the pandemic has only made matters worse. The Coalition can connect you with resources and assistance to help you put food on the table, and membership makes it easier to participate in the Coalition shopping discount program that provides specials or discount shopping from participating suppliers and service providers.',
+  familysupport: {
+    title: 'Family Support Wellness Safety Check',
+    image: '/images/programs/family-support.png',
+    body: 'The United Senior Citizen Voice-for-Change Coalition gives its members easy access to professional and affordable legal advice and representation at reduced rates from a group of panel lawyers and paralegal services. Members are entitled to basic estate planning documents, including your Will, Living Will, and Power of Attorney preparation. The Coalition does not provide any legal services or provide any legal information or representation., when a member has questions on legal issue and needs advice, they are directed to a panel lawyers or paralegal professionals and receive legal advice, consultation, or representation on several legal matters, including writing letters or making phone calls on their behalf at reduced rates. Fee services are determined by your legal representative.',
   },
   taxexemption: {
     title: 'National Tax-Exemption Grocery Card',
     image: '/images/programs/tax-exemption.png',
     body: 'The Coalition will introduce a zero-tax-exemption grocery card program to the government for low and middle-income Canadian seniors to help put more food on their tables. The Coalition believes that a national tax-exemption grocery card, supported by the government and grocery store operators, can make a big difference. The program is simple. Senior Citizens with a "ZERO-TAX-EXEMPTION GROCERY CARD", this card will offset the cost of groceries at selected grocery outlets. The United Senior Citizen Voice-for-Change Coalition pledged to fight for the implementation of this card. Your comment is welcome.',
+  },
+  groupinsurance: {
+    title: 'Group Insurance',
+    image: '/images/programs/group-insurance.png',
+    body: 'The United Senior Citizen Voice-for-Change Coalition group insurance program provides members with access to affordable group insurance plans. By leveraging the collective buying power of our membership, the Coalition negotiates competitive rates on health, dental, vision, and life insurance coverage. This program ensures that seniors who may have lost workplace benefits upon retirement can still access essential insurance protection at rates significantly lower than individual plans.',
   },
 }

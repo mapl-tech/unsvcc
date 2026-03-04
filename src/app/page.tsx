@@ -2,7 +2,7 @@ import ScrollReveal from '@/components/ui/ScrollReveal'
 import StayInvolvedCTA from '@/components/layout/StayInvolvedCTA'
 import DonationWidget from '@/components/forms/DonationWidget'
 import Link from 'next/link'
-import { ArrowRightIcon, CheckCircleIcon, UsersIcon } from '@/components/icons'
+import { ArrowRightIcon, CheckCircleIcon, UsersIcon, HandHeartIcon, HeartShieldIcon } from '@/components/icons'
 import { FEATURED_PROGRAMS, PROGRESS_BARS } from '@/lib/constants'
 
 export default function HomePage() {
@@ -20,7 +20,7 @@ export default function HomePage() {
         ></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center pt-16 pb-20 lg:pt-20 lg:pb-28">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center pt-12 pb-16 lg:pt-20 lg:pb-28">
             {/* Left: text content */}
             <div className="order-2 lg:order-1">
               <p
@@ -30,12 +30,12 @@ export default function HomePage() {
                 Free community-based advocacy, resources, and support for senior citizens across our communities.
               </p>
               <h1
-                className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] lg:text-white text-impact-red leading-[1.06]"
+                className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[3.5rem] xl:text-[4rem] lg:text-white text-impact-red leading-[1.06]"
                 style={{ letterSpacing: '-0.03em' }}
               >
                 United Senior Citizen<br />Voice for Change Coalition
               </h1>
-              <Link href="/contact" className="btn-gold mt-8 inline-flex">
+              <Link href="/contact" className="btn-gold mt-6 lg:mt-8 inline-flex">
                 GET INVOLVED
                 <ArrowRightIcon width={18} height={18} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
               </Link>
@@ -71,7 +71,7 @@ export default function HomePage() {
           </div>
 
           {/* Feature pills row */}
-          <div className="flex flex-wrap gap-3 pb-12 lg:pb-16 relative z-10">
+          <div className="flex flex-wrap gap-2 sm:gap-3 pb-10 lg:pb-16 relative z-10">
             <div className="feature-pill">
               <CheckCircleIcon width={16} height={16} stroke="#0E7C7B" strokeWidth={2} />
               Policy Advocacy
@@ -93,21 +93,141 @@ export default function HomePage() {
       </section>
 
 
-      {/* ==================== DONATION SECTION ==================== */}
+      {/* ==================== THREE-CARD SECTION ==================== */}
+      <section className="pt-[96px]" style={{ background: '#F4F4F4' }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 rounded-2xl overflow-hidden shadow-card">
+            {/* Card 1: What We Do */}
+            <div
+              className="p-8 lg:p-10 flex flex-col justify-between"
+              style={{ background: '#0E7C7B' }}
+            >
+              <div>
+                <div className="mb-5">
+                  <HandHeartIcon width={48} height={48} className="text-white/90" />
+                </div>
+                <h3
+                  className="font-heading font-bold text-xl lg:text-2xl text-white"
+                  style={{ letterSpacing: '-0.01em' }}
+                >
+                  What We Do
+                </h3>
+                <p
+                  className="font-body text-white/85 text-sm mt-3"
+                  style={{ lineHeight: 1.75 }}
+                >
+                  UNSVCC strives to support Canadian seniors by providing advocacy, community programs, education, legal guidance, and mental health services.
+                </p>
+              </div>
+              <div className="mt-6">
+                <Link
+                  href="/about"
+                  className="inline-flex items-center font-heading font-bold text-sm uppercase tracking-wide px-6 py-3 rounded-full border-2 border-white/60 text-white hover:bg-white hover:text-advocacy-teal"
+                  style={{ transition: 'background 0.25s ease, color 0.25s ease' }}
+                >
+                  LEARN MORE
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 2: Ways to Get Involved */}
+            <div
+              className="p-8 lg:p-10 flex flex-col justify-between"
+              style={{ background: '#FDF0ED' }}
+            >
+              <div>
+                <div className="mb-5">
+                  <HeartShieldIcon width={48} height={48} className="text-impact-red" />
+                </div>
+                <h3
+                  className="font-heading font-bold text-xl lg:text-2xl text-charcoal"
+                  style={{ letterSpacing: '-0.01em' }}
+                >
+                  Ways to Get Involved
+                </h3>
+                <p
+                  className="font-body text-warm-gray text-sm mt-3"
+                  style={{ lineHeight: 1.75 }}
+                >
+                  Help us make a difference by volunteering, donating, or becoming a member. Together, we can improve the lives of seniors and their families.
+                </p>
+              </div>
+              <div className="mt-6">
+                <Link
+                  href="/volunteer"
+                  className="font-heading font-bold text-sm uppercase tracking-wide text-impact-red underline underline-offset-4 decoration-2 hover:text-advocacy-teal"
+                  style={{ transition: 'color 0.2s ease' }}
+                >
+                  GET INVOLVED
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 3: Community Image */}
+            <div className="relative min-h-[280px] md:min-h-0">
+              <img
+                src="/images/community/community 2.jpg"
+                alt="Group of seniors smiling together at a UNSVCC event"
+                className="w-full h-full object-cover absolute inset-0"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+              <div className="absolute bottom-6 right-6 lg:bottom-8 lg:right-8">
+                <Link
+                  href="/membership"
+                  className="inline-flex items-center font-heading font-bold text-sm uppercase tracking-wide px-6 py-3 rounded-full"
+                  style={{
+                    background: '#D4883E',
+                    color: '#FFFFFF',
+                    transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease',
+                  }}
+                >
+                  OUR COMMUNITY
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ==================== DONATION SECTION (side-by-side) ==================== */}
       <section className="py-16 lg:py-24" style={{ background: '#F4F4F4' }}>
-        <div className="max-w-2xl mx-auto px-6 lg:px-8">
-          <ScrollReveal>
-            <DonationWidget />
-          </ScrollReveal>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+            {/* Left: heading + text */}
+            <ScrollReveal>
+              <div className="lg:sticky lg:top-32">
+                <h2
+                  className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[2.75rem] text-charcoal leading-[1.1]"
+                  style={{ letterSpacing: '-0.02em' }}
+                >
+                  Support Our Senior Advocacy Programs
+                </h2>
+                <p
+                  className="font-body text-warm-gray text-base lg:text-lg mt-5"
+                  style={{ lineHeight: 1.8 }}
+                >
+                  Your donations empower seniors today and secure their future, ensuring they have access to advocacy, community programs, education, healthcare, and legal support.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* Right: donation widget */}
+            <ScrollReveal delay={2}>
+              <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-card">
+                <DonationWidget />
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
 
       {/* ==================== MISSION DESCRIPTION STRIP ==================== */}
-      <section className="py-16 lg:py-20 bg-white border-b" style={{ borderColor: '#F0F0F0' }}>
+      <section className="py-14 lg:py-20 bg-white border-b" style={{ borderColor: '#F0F0F0' }}>
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <ScrollReveal>
-            <p className="font-body text-charcoal text-lg lg:text-xl leading-relaxed" style={{ lineHeight: 1.8 }}>
+            <p className="font-body text-charcoal text-base sm:text-lg lg:text-xl leading-relaxed" style={{ lineHeight: 1.8 }}>
               The <strong className="text-impact-red">United Senior Citizen Voice for Change Coalition</strong> provides vital advocacy, education, and community support for seniors. We empower older adults to participate in the decisions that affect their healthcare, housing, finances, and quality of life — because every senior deserves to be heard.
             </p>
           </ScrollReveal>
@@ -116,18 +236,17 @@ export default function HomePage() {
 
 
       {/* ==================== FEATURED PROGRAMS ==================== */}
-      <section id="programs" className="py-20 lg:py-28" style={{ background: '#F4F4F4' }}>
+      <section id="programs" className="py-16 lg:py-28" style={{ background: '#F4F4F4' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2
-            className="font-heading font-extrabold text-3xl lg:text-4xl text-charcoal text-center mb-14"
+            className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-charcoal text-center mb-10 lg:mb-14"
             style={{ letterSpacing: '-0.02em' }}
           >
             Featured Programs
           </h2>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {FEATURED_PROGRAMS.map((program, index) => {
-              // Delay pattern: cards 0,3 get delay-1, cards 1,4 get delay-2, cards 2,5 get delay-3
               const delay = ((index % 3) + 1) as 1 | 2 | 3;
               return (
                 <ScrollReveal key={program.title} delay={delay}>
@@ -135,19 +254,19 @@ export default function HomePage() {
                     <img
                       src={program.image}
                       alt={`${program.title} program`}
-                      className="w-full h-52 object-cover"
+                      className="w-full h-44 sm:h-52 object-cover"
                     />
-                    <div className="p-6">
-                      <h3 className="font-heading font-bold text-charcoal text-lg leading-snug">
+                    <div className="p-5 sm:p-6">
+                      <h3 className="font-heading font-bold text-charcoal text-base sm:text-lg leading-snug">
                         {program.title}
                       </h3>
                       <p
-                        className="font-body text-warm-gray text-sm mt-3 card-body-text"
+                        className="font-body text-warm-gray text-sm mt-2 sm:mt-3 card-body-text"
                         style={{ lineHeight: 1.7 }}
                       >
                         {program.description}
                       </p>
-                      <Link href="/programs" className="link-arrow mt-5 inline-flex text-sm">
+                      <Link href="/programs" className="link-arrow mt-4 sm:mt-5 inline-flex text-sm">
                         Learn More
                         <ArrowRightIcon width={14} height={14} strokeWidth={2.5} strokeLinecap="round" />
                       </Link>
@@ -158,8 +277,7 @@ export default function HomePage() {
             })}
           </div>
 
-          {/* See All Programs button */}
-          <div className="text-center mt-12">
+          <div className="text-center mt-10 lg:mt-12">
             <Link href="/programs" className="btn-blue" style={{ padding: '14px 40px' }}>
               SEE ALL PROGRAMS
             </Link>
@@ -170,44 +288,44 @@ export default function HomePage() {
 
       {/* ==================== IMPACT STATS STRIP ==================== */}
       <section id="impact" className="bg-white">
-        <div className="max-w-5xl mx-auto px-6 lg:px-8 py-16 lg:py-20 text-center">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 py-14 lg:py-20 text-center">
           <h2
-            className="font-heading font-extrabold text-3xl lg:text-4xl text-charcoal"
+            className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-charcoal"
             style={{ letterSpacing: '-0.02em' }}
           >
             Our Impact
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mt-12">
+          <div className="grid grid-cols-3 gap-6 sm:gap-10 mt-10 lg:mt-12">
             <ScrollReveal delay={1}>
               <span
-                className="font-heading font-extrabold text-4xl lg:text-5xl text-impact-red block"
+                className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-impact-red block"
                 style={{ letterSpacing: '-0.02em' }}
               >
                 10+
               </span>
-              <span className="font-body font-semibold text-charcoal text-base mt-2 block">
+              <span className="font-body font-semibold text-charcoal text-xs sm:text-base mt-1 sm:mt-2 block">
                 Support Programs
               </span>
             </ScrollReveal>
             <ScrollReveal delay={2}>
               <span
-                className="font-heading font-extrabold text-4xl lg:text-5xl text-charcoal block"
+                className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-charcoal block"
                 style={{ letterSpacing: '-0.02em' }}
               >
                 1000+
               </span>
-              <span className="font-body font-semibold text-charcoal text-base mt-2 block">
+              <span className="font-body font-semibold text-charcoal text-xs sm:text-base mt-1 sm:mt-2 block">
                 Meals Provided
               </span>
             </ScrollReveal>
             <ScrollReveal delay={3}>
               <span
-                className="font-heading font-extrabold text-4xl lg:text-5xl text-impact-red block"
+                className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl text-impact-red block"
                 style={{ letterSpacing: '-0.02em' }}
               >
                 100+
               </span>
-              <span className="font-body font-semibold text-charcoal text-base mt-2 block">
+              <span className="font-body font-semibold text-charcoal text-xs sm:text-base mt-1 sm:mt-2 block">
                 Seniors Supported
               </span>
             </ScrollReveal>
@@ -217,12 +335,12 @@ export default function HomePage() {
 
 
       {/* ==================== HELP US / DONATION GOAL ==================== */}
-      <section id="donate" className="py-16 lg:py-24" style={{ background: '#FDF0ED' }}>
+      <section id="donate" className="py-14 lg:py-24" style={{ background: '#FDF0ED' }}>
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <ScrollReveal delay={1}>
             <div className="text-center">
               <h3
-                className="font-heading text-impact-red font-bold text-2xl lg:text-3xl"
+                className="font-heading text-impact-red font-bold text-xl sm:text-2xl lg:text-3xl"
                 style={{ letterSpacing: '-0.02em' }}
               >
                 Help us empower more seniors in our community
@@ -232,14 +350,14 @@ export default function HomePage() {
 
           {/* Progress bars */}
           <ScrollReveal delay={2}>
-            <div className="mt-12 space-y-8">
+            <div className="mt-10 lg:mt-12 space-y-6 lg:space-y-8">
               {PROGRESS_BARS.map((bar) => (
                 <div key={bar.label}>
                   <div className="flex justify-between items-end mb-2">
-                    <span className="font-body font-semibold text-charcoal text-sm">{bar.label}</span>
-                    <span className="font-heading font-bold text-advocacy-teal text-lg">
+                    <span className="font-body font-semibold text-charcoal text-xs sm:text-sm">{bar.label}</span>
+                    <span className="font-heading font-bold text-advocacy-teal text-base lg:text-lg">
                       ${bar.current.toLocaleString()}{' '}
-                      <span className="text-warm-gray font-normal text-sm">
+                      <span className="text-warm-gray font-normal text-xs sm:text-sm">
                         / ${bar.goal.toLocaleString()}
                       </span>
                     </span>
@@ -253,7 +371,7 @@ export default function HomePage() {
           </ScrollReveal>
 
           <ScrollReveal delay={3}>
-            <div className="text-center mt-10">
+            <div className="text-center mt-8 lg:mt-10">
               <Link href="/donate" className="btn-gold inline-flex">
                 SUPPORT OUR CAUSE
               </Link>
@@ -264,9 +382,9 @@ export default function HomePage() {
 
 
       {/* ==================== ABOUT / TWO-COL LEFT IMAGE ==================== */}
-      <section id="about" className="py-20 lg:py-28" style={{ background: '#F4F4F4' }}>
+      <section id="about" className="py-16 lg:py-28" style={{ background: '#F4F4F4' }}>
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             {/* Image */}
             <ScrollReveal>
               <div className="rounded-2xl overflow-hidden shadow-card">
@@ -287,18 +405,18 @@ export default function HomePage() {
                 About Us
               </span>
               <h2
-                className="font-heading text-impact-red font-bold text-3xl lg:text-4xl mt-3"
+                className="font-heading text-impact-red font-bold text-2xl sm:text-3xl lg:text-4xl mt-3"
                 style={{ letterSpacing: '-0.02em' }}
               >
                 A safe space for advocacy and community support
               </h2>
               <p
-                className="font-body text-charcoal text-base lg:text-lg mt-6"
+                className="font-body text-charcoal text-base lg:text-lg mt-5 lg:mt-6"
                 style={{ lineHeight: 1.8 }}
               >
                 Our coalition brings together seniors, families, and caregivers in a welcoming environment where voices are heard and real change happens. From policy workshops to social gatherings, we provide the resources and support older adults need to thrive.
               </p>
-              <Link href="/about" className="link-arrow mt-6 inline-flex">
+              <Link href="/about" className="link-arrow mt-5 lg:mt-6 inline-flex">
                 Learn more about us
                 <ArrowRightIcon width={16} height={16} strokeWidth={2.5} strokeLinecap="round" />
               </Link>
@@ -313,9 +431,9 @@ export default function HomePage() {
 
 
       {/* ==================== COMMUNITY IMAGE + TEXT ==================== */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-16 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
             <ScrollReveal>
               <span
                 className="font-heading font-bold text-sm text-advocacy-teal uppercase tracking-widest"
@@ -324,18 +442,18 @@ export default function HomePage() {
                 Our Community
               </span>
               <h2
-                className="font-heading text-impact-red font-bold text-3xl lg:text-4xl mt-3"
+                className="font-heading text-impact-red font-bold text-2xl sm:text-3xl lg:text-4xl mt-3"
                 style={{ letterSpacing: '-0.02em' }}
               >
                 Transforming Senior Advocacy, Together
               </h2>
               <p
-                className="font-body text-charcoal text-base lg:text-lg mt-6"
+                className="font-body text-charcoal text-base lg:text-lg mt-5 lg:mt-6"
                 style={{ lineHeight: 1.8 }}
               >
                 Behind every policy change is a community of determined seniors who refused to be silent. Our coalition is built on the belief that dignity, equity, and transparency are not privileges — they are rights. Together, we&apos;re building a future where every senior thrives.
               </p>
-              <div className="flex flex-wrap gap-4 mt-8">
+              <div className="flex flex-wrap gap-3 sm:gap-4 mt-6 lg:mt-8">
                 <Link href="/membership" className="btn-blue">
                   JOIN US TODAY
                 </Link>

@@ -91,7 +91,7 @@ export default function VolunteerPage() {
             <ScrollReveal delay={2}>
               <div className="rounded-2xl overflow-hidden shadow-card">
                 <img
-                  src="/images/volunteer.png"
+                  src="/images/volunteer/volunteer.png"
                   alt="UNSVCC Volunteers working together to support Canadian seniors"
                   className="w-full h-auto object-cover"
                   style={{ aspectRatio: '4/3' }}
@@ -150,7 +150,7 @@ export default function VolunteerPage() {
                 {/* Image */}
                 <div className="h-64 md:h-full" style={{ minHeight: '280px' }}>
                   <img
-                    src="/images/volunteer-bottom.jpg"
+                    src="/images/volunteer/volunteer-bottom.jpg"
                     alt="Supporting Canadian seniors through UNSVCC"
                     className="w-full h-full object-cover"
                   />

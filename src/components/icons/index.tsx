@@ -219,6 +219,62 @@ export function LinkedInIcon({ width = 24, height = 24, ...props }: IconProps) {
   )
 }
 
+export function HandHeartIcon({ width = 24, height = 24, ...props }: IconProps) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 48 48"
+      fill="none"
+      {...props}
+    >
+      {/* Hand */}
+      <path
+        d="M10 34c-2-3-4-6-4-10 0-3 1-5 3-6s5-1 7 1l2 2V10a3 3 0 016 0v8a3 3 0 016 0v2a3 3 0 016 0v4c0 8-5 14-12 16h-8l-6-6z"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      {/* Sprout */}
+      <path
+        d="M24 10V4M20 6c2-2 4-3 4-3s2 1 4 3"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="24" cy="3" r="1.5" fill="currentColor" />
+    </svg>
+  )
+}
+
+export function HeartShieldIcon({ width = 24, height = 24, ...props }: IconProps) {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 48 48"
+      fill="none"
+      {...props}
+    >
+      {/* Person silhouette */}
+      <circle cx="24" cy="12" r="6" stroke="currentColor" strokeWidth="2.5" />
+      <path
+        d="M14 36v-4a10 10 0 0120 0v4"
+        stroke="currentColor"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+      />
+      {/* Heart */}
+      <path
+        d="M24 26l-1.5-1.5a4 4 0 01-1-4.5 3 3 0 015-1l.5.5.5-.5a3 3 0 015 1 4 4 0 01-1 4.5L24 26z"
+        fill="currentColor"
+      />
+    </svg>
+  )
+}
+
 export function SearchIcon({ width = 24, height = 24, ...props }: IconProps) {
   return (
     <svg

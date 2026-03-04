@@ -27,7 +27,7 @@ export default function Navbar() {
             <img
               src="/brand/unsvcc-logo.svg"
               alt="UNSVCC Logo"
-              className="h-[78px] w-auto"
+              className="h-[70px] w-auto"
             />
           </Link>
 
