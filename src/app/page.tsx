@@ -30,7 +30,7 @@ export default function HomePage() {
                 Free community-based advocacy, resources, and support for senior citizens across our communities.
               </p>
               <h1
-                className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[3.5rem] xl:text-[4rem] lg:text-white text-impact-red leading-[1.06]"
+                className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[3.5rem] xl:text-[4rem] lg:text-white text-charcoal leading-[1.06]"
                 style={{ letterSpacing: '-0.03em' }}
               >
                 United Senior Citizen<br />Voice for Change Coalition
