@@ -1,0 +1,362 @@
+import ScrollReveal from '@/components/ui/ScrollReveal'
+import StayInvolvedCTA from '@/components/layout/StayInvolvedCTA'
+import DonationWidget from '@/components/forms/DonationWidget'
+import Link from 'next/link'
+import { ArrowRightIcon, CheckCircleIcon, UsersIcon } from '@/components/icons'
+import { FEATURED_PROGRAMS, PROGRESS_BARS } from '@/lib/constants'
+
+export default function HomePage() {
+  return (
+    <>
+      {/* ==================== HERO ==================== */}
+      <section className="relative overflow-hidden" style={{ minHeight: '600px', background: '#FDF0ED' }}>
+        {/* Diagonal red background */}
+        <div className="hero-diagonal"></div>
+
+        {/* Subtle accent stripe at very top */}
+        <div
+          className="absolute top-0 left-0 right-0 h-1 z-10"
+          style={{ background: 'linear-gradient(90deg, #D4883E 0%, #D4883E 30%, transparent 30%)' }}
+        ></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center pt-16 pb-20 lg:pt-20 lg:pb-28">
+            {/* Left: text content */}
+            <div className="order-2 lg:order-1">
+              <p
+                className="font-body text-sm lg:text-base mb-4 lg:text-white/80 text-charcoal"
+                style={{ lineHeight: 1.7, maxWidth: '380px' }}
+              >
+                Free community-based advocacy, resources, and support for senior citizens across our communities.
+              </p>
+              <h1
+                className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] lg:text-white text-impact-red leading-[1.06]"
+                style={{ letterSpacing: '-0.03em' }}
+              >
+                United Senior Citizen<br />Voice for Change Coalition
+              </h1>
+              <Link href="/contact" className="btn-gold mt-8 inline-flex">
+                GET INVOLVED
+                <ArrowRightIcon width={18} height={18} strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" />
+              </Link>
+            </div>
+
+            {/* Right: hero image */}
+            <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-md lg:max-w-lg">
+                <img
+                  src="/images/hero/ottawacancer-hero-image.jpg"
+                  alt="Happy senior couple smiling together outdoors"
+                  className="w-full h-auto rounded-3xl object-cover shadow-card"
+                  style={{ aspectRatio: '7/6' }}
+                />
+                {/* Small floating accent card */}
+                <div
+                  className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-card hidden lg:flex items-center gap-3"
+                  style={{ minWidth: '200px' }}
+                >
+                  <div
+                    className="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0"
+                    style={{ background: '#0E7C7B' }}
+                  >
+                    <UsersIcon width={18} height={18} stroke="white" strokeWidth={2} />
+                  </div>
+                  <div>
+                    <span className="font-heading font-bold text-impact-red text-lg block leading-tight">500+</span>
+                    <span className="font-body text-warm-gray text-xs">Active Members</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature pills row */}
+          <div className="flex flex-wrap gap-3 pb-12 lg:pb-16 relative z-10">
+            <div className="feature-pill">
+              <CheckCircleIcon width={16} height={16} stroke="#0E7C7B" strokeWidth={2} />
+              Policy Advocacy
+            </div>
+            <div className="feature-pill">
+              <CheckCircleIcon width={16} height={16} stroke="#0E7C7B" strokeWidth={2} />
+              Community Programs
+            </div>
+            <div className="feature-pill">
+              <CheckCircleIcon width={16} height={16} stroke="#0E7C7B" strokeWidth={2} />
+              Education &amp; Outreach
+            </div>
+            <div className="feature-pill">
+              <CheckCircleIcon width={16} height={16} stroke="#0E7C7B" strokeWidth={2} />
+              Rights Protection
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ==================== DONATION SECTION ==================== */}
+      <section className="py-16 lg:py-24" style={{ background: '#F4F4F4' }}>
+        <div className="max-w-2xl mx-auto px-6 lg:px-8">
+          <ScrollReveal>
+            <DonationWidget />
+          </ScrollReveal>
+        </div>
+      </section>
+
+
+      {/* ==================== MISSION DESCRIPTION STRIP ==================== */}
+      <section className="py-16 lg:py-20 bg-white border-b" style={{ borderColor: '#F0F0F0' }}>
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <ScrollReveal>
+            <p className="font-body text-charcoal text-lg lg:text-xl leading-relaxed" style={{ lineHeight: 1.8 }}>
+              The <strong className="text-impact-red">United Senior Citizen Voice for Change Coalition</strong> provides vital advocacy, education, and community support for seniors. We empower older adults to participate in the decisions that affect their healthcare, housing, finances, and quality of life — because every senior deserves to be heard.
+            </p>
+          </ScrollReveal>
+        </div>
+      </section>
+
+
+      {/* ==================== FEATURED PROGRAMS ==================== */}
+      <section id="programs" className="py-20 lg:py-28" style={{ background: '#F4F4F4' }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <h2
+            className="font-heading font-extrabold text-3xl lg:text-4xl text-charcoal text-center mb-14"
+            style={{ letterSpacing: '-0.02em' }}
+          >
+            Featured Programs
+          </h2>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {FEATURED_PROGRAMS.map((program, index) => {
+              // Delay pattern: cards 0,3 get delay-1, cards 1,4 get delay-2, cards 2,5 get delay-3
+              const delay = ((index % 3) + 1) as 1 | 2 | 3;
+              return (
+                <ScrollReveal key={program.title} delay={delay}>
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-card card-lift h-full">
+                    <img
+                      src={program.image}
+                      alt={`${program.title} program`}
+                      className="w-full h-52 object-cover"
+                    />
+                    <div className="p-6">
+                      <h3 className="font-heading font-bold text-charcoal text-lg leading-snug">
+                        {program.title}
+                      </h3>
+                      <p
+                        className="font-body text-warm-gray text-sm mt-3 card-body-text"
+                        style={{ lineHeight: 1.7 }}
+                      >
+                        {program.description}
+                      </p>
+                      <Link href="/programs" className="link-arrow mt-5 inline-flex text-sm">
+                        Learn More
+                        <ArrowRightIcon width={14} height={14} strokeWidth={2.5} strokeLinecap="round" />
+                      </Link>
+                    </div>
+                  </div>
+                </ScrollReveal>
+              );
+            })}
+          </div>
+
+          {/* See All Programs button */}
+          <div className="text-center mt-12">
+            <Link href="/programs" className="btn-blue" style={{ padding: '14px 40px' }}>
+              SEE ALL PROGRAMS
+            </Link>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ==================== IMPACT STATS STRIP ==================== */}
+      <section id="impact" className="bg-white">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 py-16 lg:py-20 text-center">
+          <h2
+            className="font-heading font-extrabold text-3xl lg:text-4xl text-charcoal"
+            style={{ letterSpacing: '-0.02em' }}
+          >
+            Our Impact
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 mt-12">
+            <ScrollReveal delay={1}>
+              <span
+                className="font-heading font-extrabold text-4xl lg:text-5xl text-impact-red block"
+                style={{ letterSpacing: '-0.02em' }}
+              >
+                10+
+              </span>
+              <span className="font-body font-semibold text-charcoal text-base mt-2 block">
+                Support Programs
+              </span>
+            </ScrollReveal>
+            <ScrollReveal delay={2}>
+              <span
+                className="font-heading font-extrabold text-4xl lg:text-5xl text-charcoal block"
+                style={{ letterSpacing: '-0.02em' }}
+              >
+                1000+
+              </span>
+              <span className="font-body font-semibold text-charcoal text-base mt-2 block">
+                Meals Provided
+              </span>
+            </ScrollReveal>
+            <ScrollReveal delay={3}>
+              <span
+                className="font-heading font-extrabold text-4xl lg:text-5xl text-impact-red block"
+                style={{ letterSpacing: '-0.02em' }}
+              >
+                100+
+              </span>
+              <span className="font-body font-semibold text-charcoal text-base mt-2 block">
+                Seniors Supported
+              </span>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ==================== HELP US / DONATION GOAL ==================== */}
+      <section id="donate" className="py-16 lg:py-24" style={{ background: '#FDF0ED' }}>
+        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+          <ScrollReveal delay={1}>
+            <div className="text-center">
+              <h3
+                className="font-heading text-impact-red font-bold text-2xl lg:text-3xl"
+                style={{ letterSpacing: '-0.02em' }}
+              >
+                Help us empower more seniors in our community
+              </h3>
+            </div>
+          </ScrollReveal>
+
+          {/* Progress bars */}
+          <ScrollReveal delay={2}>
+            <div className="mt-12 space-y-8">
+              {PROGRESS_BARS.map((bar) => (
+                <div key={bar.label}>
+                  <div className="flex justify-between items-end mb-2">
+                    <span className="font-body font-semibold text-charcoal text-sm">{bar.label}</span>
+                    <span className="font-heading font-bold text-advocacy-teal text-lg">
+                      ${bar.current.toLocaleString()}{' '}
+                      <span className="text-warm-gray font-normal text-sm">
+                        / ${bar.goal.toLocaleString()}
+                      </span>
+                    </span>
+                  </div>
+                  <div className="progress-track">
+                    <div className="progress-fill" style={{ width: `${bar.percent}%` }}></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={3}>
+            <div className="text-center mt-10">
+              <Link href="/donate" className="btn-gold inline-flex">
+                SUPPORT OUR CAUSE
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
+
+
+      {/* ==================== ABOUT / TWO-COL LEFT IMAGE ==================== */}
+      <section id="about" className="py-20 lg:py-28" style={{ background: '#F4F4F4' }}>
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Image */}
+            <ScrollReveal>
+              <div className="rounded-2xl overflow-hidden shadow-card">
+                <img
+                  src="/images/about/about-us.jpg"
+                  alt="Caregiver assisting seniors at a UNSVCC community gathering"
+                  className="w-full h-auto object-cover"
+                  style={{ aspectRatio: '10/7' }}
+                />
+              </div>
+            </ScrollReveal>
+            {/* Text */}
+            <ScrollReveal delay={2}>
+              <span
+                className="font-heading font-bold text-sm text-advocacy-teal uppercase tracking-widest"
+                style={{ letterSpacing: '0.12em' }}
+              >
+                About Us
+              </span>
+              <h2
+                className="font-heading text-impact-red font-bold text-3xl lg:text-4xl mt-3"
+                style={{ letterSpacing: '-0.02em' }}
+              >
+                A safe space for advocacy and community support
+              </h2>
+              <p
+                className="font-body text-charcoal text-base lg:text-lg mt-6"
+                style={{ lineHeight: 1.8 }}
+              >
+                Our coalition brings together seniors, families, and caregivers in a welcoming environment where voices are heard and real change happens. From policy workshops to social gatherings, we provide the resources and support older adults need to thrive.
+              </p>
+              <Link href="/about" className="link-arrow mt-6 inline-flex">
+                Learn more about us
+                <ArrowRightIcon width={16} height={16} strokeWidth={2.5} strokeLinecap="round" />
+              </Link>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ==================== STAY INVOLVED CTA BANNER ==================== */}
+      <StayInvolvedCTA />
+
+
+      {/* ==================== COMMUNITY IMAGE + TEXT ==================== */}
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <ScrollReveal>
+              <span
+                className="font-heading font-bold text-sm text-advocacy-teal uppercase tracking-widest"
+                style={{ letterSpacing: '0.12em' }}
+              >
+                Our Community
+              </span>
+              <h2
+                className="font-heading text-impact-red font-bold text-3xl lg:text-4xl mt-3"
+                style={{ letterSpacing: '-0.02em' }}
+              >
+                Transforming Senior Advocacy, Together
+              </h2>
+              <p
+                className="font-body text-charcoal text-base lg:text-lg mt-6"
+                style={{ lineHeight: 1.8 }}
+              >
+                Behind every policy change is a community of determined seniors who refused to be silent. Our coalition is built on the belief that dignity, equity, and transparency are not privileges — they are rights. Together, we&apos;re building a future where every senior thrives.
+              </p>
+              <div className="flex flex-wrap gap-4 mt-8">
+                <Link href="/membership" className="btn-blue">
+                  JOIN US TODAY
+                </Link>
+                <Link href="/contact" className="btn-outline">
+                  CONTACT US
+                </Link>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={2}>
+              <div className="rounded-2xl overflow-hidden shadow-card">
+                <img
+                  src="/images/community/our-community.jpg"
+                  alt="Group of diverse seniors smiling together at a UNSVCC event"
+                  className="w-full h-auto object-cover"
+                  style={{ aspectRatio: '10/7' }}
+                />
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}
