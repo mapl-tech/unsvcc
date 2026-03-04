@@ -258,8 +258,8 @@
   @media (max-width: 1023px) {
     .hero-diagonal {
       width: 100%;
-      height: 340px;
-      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      height: 280px;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
     }
   }
 
