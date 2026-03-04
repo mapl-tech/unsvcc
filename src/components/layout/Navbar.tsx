@@ -28,6 +28,7 @@ export default function Navbar() {
               src="/brand/unsvcc-logo.svg"
               alt="UNSVCC Logo"
               className="h-[60px] lg:h-[70px] w-auto"
+              style={{ imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
             />
           </Link>
 
