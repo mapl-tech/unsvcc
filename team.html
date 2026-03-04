@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Team — UNSVCC</title>
+  <meta name="description" content="Meet the dedicated team behind the United Senior Citizen Voice for Change Coalition — our directors and leaders driving senior advocacy.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'impact-red': '#E74A30',
+            'impact-red-dark': '#C43D28',
+            'impact-red-light': '#EE6B55',
+            'advocacy-teal': '#0E7C7B',
+            'advocacy-teal-dark': '#0a5f5e',
+            'advocacy-teal-light': '#10908f',
+            'dignity-gold': '#D4883E',
+            'dignity-gold-light': '#d4b44a',
+            'charcoal': '#333333',
+            'warm-gray': '#6E6E6E',
+            'soft-gray': '#F4F4F4',
+            'light-warm': '#FDF0ED',
+            'pale-gold': '#FDF6E3',
+          },
+          fontFamily: {
+            'heading': ['Montserrat', 'sans-serif'],
+            'body': ['Open Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; color: #333333; line-height: 1.6; margin: 0; }
+
+    /* ---- Buttons ---- */
+    .btn-gold {
+      background-color: #D4883E;
+      color: #FFFFFF;
+      border-radius: 8px;
+      min-height: 48px;
+      padding: 14px 36px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 162, 39, 0.35);
+    }
+    .btn-gold:focus-visible {
+      outline: 3px solid #0E7C7B;
+      outline-offset: 2px;
+    }
+    .btn-gold:active { transform: translateY(0); }
+
+    .btn-blue {
+      background-color: #0E7C7B; color: #FFFFFF; border-radius: 8px; min-height: 48px; padding: 14px 36px;
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.02em; text-transform: uppercase;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; border: none; text-decoration: none;
+    }
+    .btn-blue:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(14, 124, 123, 0.35); }
+    .btn-blue:focus-visible { outline: 3px solid #D4883E; outline-offset: 2px; }
+    .btn-blue:active { transform: translateY(0); }
+
+    /* ---- Shadows ---- */
+    .shadow-card {
+      box-shadow:
+        0 1px 3px rgba(231, 74, 48, 0.04),
+        0 4px 12px rgba(231, 74, 48, 0.06),
+        0 12px 28px rgba(231, 74, 48, 0.08);
+    }
+
+    /* ---- Nav link ---- */
+    .nav-link {
+      position: relative;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: #333333;
+      text-decoration: none;
+      padding: 4px 0;
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover { color: #C43D28; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #D4883E;
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link.active { color: #C43D28; }
+    .nav-link.active::after { display: none; }
+    .nav-link.active:hover::after { display: none; }
+    .nav-link:focus-visible {
+      outline: 2px solid #D4883E;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    /* ---- Dropdown ---- */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .nav-dropdown-trigger svg {
+      transition: transform 0.2s ease;
+    }
+    .nav-dropdown:hover .nav-dropdown-trigger svg {
+      transform: rotate(180deg);
+    }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      min-width: 200px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow:
+        0 4px 12px rgba(0,0,0,0.08),
+        0 12px 28px rgba(0,0,0,0.06);
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #333333;
+      text-decoration: none;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .nav-dropdown-menu a:hover {
+      background: #FDF0ED;
+      color: #C43D28;
+    }
+    .nav-dropdown-menu a:focus-visible {
+      outline: 2px solid #D4883E;
+      outline-offset: -2px;
+      border-radius: 4px;
+    }
+
+    /* ---- Scroll reveal ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    .reveal.visible {
+      animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+
+    /* ---- Mobile nav ---- */
+    .mobile-panel {
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-panel.open { transform: translateX(0); }
+
+    /* ---- Link arrow ---- */
+    .link-arrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: #E74A30;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .link-arrow:hover { gap: 12px; }
+    .link-arrow:focus-visible {
+      outline: 2px solid #D4883E;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+  </style>
+</head>
+<body class="bg-white overflow-x-hidden">
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="sticky top-0 z-50 bg-white" style="box-shadow: 0 1px 0 rgba(0,0,0,0.06);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-3" aria-label="UNSVCC Home">
+          <img src="brand_assets/UNSVCC logo.svg" alt="UNSVCC Logo" class="h-11 w-auto">
+        </a>
+
+        <!-- Desktop links -->
+        <div class="hidden lg:flex items-center gap-8">
+          <div class="nav-dropdown">
+            <span class="nav-link active nav-dropdown-trigger">
+              About Us
+              <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 8l5 5 5-5"/></svg>
+            </span>
+            <div class="nav-dropdown-menu">
+              <a href="about.html">Our Mandate</a>
+              <a href="team.html" style="color: #C43D28;">Our Team</a>
+              <a href="centre.html">UNSVCC Centre</a>
+            </div>
+          </div>
+          <a href="programs.html" class="nav-link">Programs</a>
+          <a href="membership.html" class="nav-link">Membership</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="volunteer.html" class="btn-blue" style="padding: 10px 28px; min-height: 42px; font-size: 13px;">VOLUNTEER</a>
+          <a href="donate.html" class="btn-outline" style="padding: 10px 28px; min-height: 42px; font-size: 13px;">DONATE</a>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button id="menuBtn" class="lg:hidden flex items-center justify-center" style="min-width:44px;min-height:44px;" aria-label="Open menu" aria-expanded="false">
+          <svg width="26" height="26" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="22" y2="7"/><line x1="4" y1="13" x2="22" y2="13"/><line x1="4" y1="19" x2="22" y2="19"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile panel -->
+    <div id="mobilePanel" class="mobile-panel fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-50 lg:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-soft-gray">
+        <span class="font-heading text-impact-red font-bold text-lg">Menu</span>
+        <button id="closeBtn" class="flex items-center justify-center" style="min-width:44px;min-height:44px;" aria-label="Close menu">
+          <svg width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="flex flex-col p-6 gap-1">
+        <span class="font-body text-impact-red font-semibold text-lg py-3 px-4">About Us</span>
+        <a href="about.html" class="mob-link font-body text-warm-gray font-medium text-base py-2 px-4 pl-8 rounded-lg" style="transition: background 0.2s;">Our Mandate</a>
+        <a href="team.html" class="mob-link font-body text-impact-red font-medium text-base py-2 px-4 pl-8 rounded-lg" style="background: #FDF0ED;">Our Team</a>
+        <a href="centre.html" class="mob-link font-body text-warm-gray font-medium text-base py-2 px-4 pl-8 rounded-lg" style="transition: background 0.2s;">UNSVCC Centre</a>
+        <a href="programs.html" class="mob-link font-body text-charcoal font-semibold text-lg py-3 px-4 rounded-lg" style="transition: background 0.2s;">Programs</a>
+        <a href="membership.html" class="mob-link font-body text-charcoal font-semibold text-lg py-3 px-4 rounded-lg" style="transition: background 0.2s;">Membership</a>
+        <a href="contact.html" class="mob-link font-body text-charcoal font-semibold text-lg py-3 px-4 rounded-lg" style="transition: background 0.2s;">Contact</a>
+        <div class="mt-4 pt-4 border-t border-soft-gray">
+          <a href="volunteer.html" class="btn-blue w-full text-center">VOLUNTEER</a>
+          <a href="donate.html" class="btn-outline w-full text-center mt-3">DONATE</a>
+        </div>
+      </div>
+    </div>
+    <div id="overlay" class="fixed inset-0 bg-black/30 z-40 hidden lg:hidden"></div>
+  </nav>
+
+
+  <!-- ==================== PAGE HEADER: OUR TEAM ==================== -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center reveal">
+      <h1 class="font-heading font-extrabold text-4xl lg:text-5xl xl:text-[3.4rem] text-charcoal" style="letter-spacing: -0.03em;">Our Team</h1>
+    </div>
+  </section>
+
+
+  <!-- ==================== DIRECTORS ==================== -->
+  <section id="directors" class="py-20 lg:py-28" style="background: #F4F4F4;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal">
+        <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-charcoal" style="letter-spacing: -0.02em;">Directors</h2>
+        <div class="w-16 h-0.5 bg-charcoal mx-auto mt-4"></div>
+      </div>
+
+      <!-- Director card -->
+      <div class="mt-16 max-w-sm mx-auto reveal delay-2">
+        <div class="flex flex-col items-center text-center">
+          <!-- Photo -->
+          <div class="w-36 h-36 rounded-full overflow-hidden shadow-card mb-6" style="border: 4px solid #FFFFFF;">
+            <img src="real_screenchots/ken coghiel pic.jpg" alt="Kenneth Coghiel" class="w-full h-full object-cover">
+          </div>
+          <!-- Name & title -->
+          <h3 class="font-heading font-bold text-xl text-charcoal">Kenneth Coghiel</h3>
+          <p class="font-body font-semibold text-warm-gray text-sm mt-1" style="line-height: 1.5;">National Director, Founder &amp; Senior Citizen Activist</p>
+          <!-- Bio -->
+          <p class="font-body text-warm-gray text-sm mt-4" style="line-height: 1.7;">
+            The founder of the United Senior Citizens Voice-for-Change Coalition is Kenneth G. Coghiel, a Canadian citizen born in Jamaica, who has dedicated his life to advocating for the rights and well-being of seniors across Canada.
+          </p>
+          <!-- Read more -->
+          <button onclick="openBioModal()" class="font-body font-semibold text-sm mt-5 inline-flex items-center gap-2 cursor-pointer" style="color: #E74A30; background: none; border: none; padding: 0; transition: opacity 0.2s ease;" onmouseenter="this.style.opacity='0.7'" onmouseleave="this.style.opacity='1'">
+            Read more
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== BIO MODAL ==================== -->
+  <div id="bioModal" class="fixed inset-0 z-[200] hidden" role="dialog" aria-modal="true" aria-labelledby="bioModalTitle">
+    <!-- Backdrop -->
+    <div class="absolute inset-0 bg-black/40" onclick="closeBioModal()" style="backdrop-filter: blur(4px);"></div>
+    <!-- Modal -->
+    <div class="absolute inset-4 sm:inset-8 lg:inset-16 xl:inset-y-12 xl:inset-x-[15%] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden" style="transform: translateY(20px); opacity: 0; transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;" id="bioModalContent">
+      <!-- Header -->
+      <div class="flex items-center justify-between px-6 sm:px-8 py-5 border-b" style="border-color: #F0F0F0;">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+            <img src="real_screenchots/ken coghiel pic.jpg" alt="Kenneth Coghiel" class="w-full h-full object-cover">
+          </div>
+          <div>
+            <h3 id="bioModalTitle" class="font-heading font-bold text-lg text-charcoal">Kenneth G. Coghiel</h3>
+            <p class="font-body text-warm-gray text-xs">National Director, Founder &amp; Senior Citizen Activist</p>
+          </div>
+        </div>
+        <button onclick="closeBioModal()" class="w-10 h-10 flex items-center justify-center rounded-full cursor-pointer" style="background: #F4F4F4; border: none; transition: background 0.2s ease;" onmouseenter="this.style.background='#E8E8E8'" onmouseleave="this.style.background='#F4F4F4'" aria-label="Close">
+          <svg width="20" height="20" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"><line x1="15" y1="5" x2="5" y2="15"/><line x1="5" y1="5" x2="15" y2="15"/></svg>
+        </button>
+      </div>
+      <!-- Body -->
+      <div class="flex-1 overflow-y-auto px-6 sm:px-8 py-6 sm:py-8">
+        <div class="max-w-3xl mx-auto font-body text-warm-gray text-sm sm:text-base" style="line-height: 1.85;">
+          <p>The founder of the United Senior Citizens Voice for Change Coalition is Kenneth G. Coghiel, a Canadian citizen born in Jamaica, who is inspired by hope, love, and kindness. I am a tenacious, persistent, and forward-thinking individual with over thirty years of experience in both private and public law enforcement. At the age of 59, I decided to make a career change and accepted a position in building maintenance. While working as a building superintendent, I had the opportunity to see and hear about many seniors who are having housing and food insecurity issues. Some of these people are now deceased, while some are still stuck in the deep cycle of POVERTY. Senior Citizen poverty is a silent crisis forming in communities across Canada. The victims are the working poor and low-income earners.</p>
+
+          <p class="mt-5">Throughout a twenty-four-month period, I would start conversations with everyone I met regarding the issue of senior citizen poverty. Through my investigation, I learned that millions of Canadian seniors are living in extreme poverty and have no voice or representation to bring their issues to light. Many seniors' citizens' only source of income is the government-supported Canada Pension and Old Age Security, which, in most cases, is not what they pay for in a month's rent alone.</p>
+
+          <p class="mt-5">The conclusion of my investigation led me to start the United Senior Citizen Voice for Change Coalition. As a senior, I have things to fight with my voice and my pen. But something else was missing: a unified voice. My investigation eventually became a spiritual journey and a calling to do something to help fill the gap of senior poverty. You probably heard this saying: when one person cries for injustice, it is called a whisper; but when we cry together, the world listens. There is a silent crisis facing low-income Canadian seniors that needs a unified voice. It is a poverty crisis; an issue people don't talk about; the victims are the working poor.</p>
+
+          <p class="mt-5">At the age of 61 years old, I started to embrace the idea of starting a movement to represent Canadian seniors and to make their needs a national interest and priority; a movement that will provide real help, benefits, programs, and services that will make a difference in the everyday lives of senior citizens. The commitment and dedication to serve humanity come from leaders such as Nelson Mandela, Marcus Garvey, Mahatma Gandhi, and the most honourable Tommy Douglas, father of Canadian public healthcare. It is in the spirit of these great leaders that I take on the challenge of restoring the purpose of my life to make a difference, and I created the United Senior Citizens Voice for Change Coalition for the ones who cannot fight for themselves, seniors in need of help and support. At the age of 65, I consider myself a teenage senior, ready for the challenge ahead.</p>
+
+          <p class="mt-5">Did you know that nearly 1 in every fifty Canadian senior citizens are now living in poverty, especially those seniors without any other source of income other than the basic government retirement monthly support benefit; which in most cases is not enough to cover the cost of food and rent for a month. My investigation revealed that in communities across Canada, there are many elderly people whom we call the foundation builders of Canada, men and women senior citizens who once contributed to the growth and development of this country who were not fortunate enough to have the opportunity to create a better life experience for themselves upon retirement, in most cases no fault of their own, these people need your help. To help is because you care, get involved, and make a difference.</p>
+
+          <p class="mt-5">What the coalition needs now is people who can reactivate the purpose of their lives to serve humanity. When we come together, we connect in a variety of ways. Most of us feel better when we are proactively doing something good that gives us a sense of pride and the feeling that we are working towards something bigger than ourselves. I am asking you to join us.</p>
+
+          <p class="mt-5">You've probably heard the phrase "Teamwork makes the dream work" or seen it printed on office mugs and motivational posters. But what exactly does it mean, and what does good teamwork look like? The phrase "Teamwork makes the dream work" especially means that dividing tasks and responsibilities allows a team can lead to better outcomes than a single person doing the task alone. The friendships we develop in teamwork service or unions in our lives, the losses we face are not always easy or pleasant but with creative thinking and action, we become successful we work hard through the struggles and solve the problems one, by contributing to our community goal and welfare of like-minded people there we find the real meaning of the purpose of our life.</p>
+
+          <p class="mt-5">This letter is to invite you to join us in this national movement that represents the social well-being of Canadians. This invitation is for individuals like you to use your life experience to inspire others, educate, and support each other in a vision that is bigger than any one individual's dream. Our collective action is needed, especially when going up against powerful interests. Together, let us reactivate the purpose of our lives and make a difference now and for generations to come. You might start by finding a quiet place and pondering these not-so-simple questions:</p>
+
+          <ol class="mt-4 ml-6 list-decimal space-y-1">
+            <li>Who am I?</li>
+            <li>What motivates you?</li>
+            <li>What am I here for?</li>
+            <li>What can I do to help?</li>
+          </ol>
+
+          <p class="mt-5">As you continue going through this information, please take a closer look at some of the benefits our membership services provide and give us your comments. By donating and supporting the United Senior Citizens Voice for Change Coalition, you are giving us a strong voice, especially for seniors facing food and housing insecurity issues. You are also helping to improve the quality of life for seniors and giving the organization a stronger voice to advocate for Canadian seniors in need. Supporting the United Senior Citizen Voice for Change Coalition is the Right choice to fight for senior citizens and build a better tomorrow. Your voice matters, your vote matters, your membership matters, and your support matters. Together, let us fight for the ones who cannot fight for themselves. Let us love and support the elderly in our neighbourhoods as we love ourselves and give a helping hand when we can. Thank you in advance for taking the time to review this information.</p>
+
+          <div class="mt-8 pt-6 border-t" style="border-color: #F0F0F0;">
+            <p class="font-heading font-bold text-charcoal text-base">Kenneth G. Coghiel</p>
+            <p class="font-body text-warm-gray text-sm mt-1">National Director, Founder &amp; Senior Citizen Activist</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== COMMUNITY PARTNERS ==================== -->
+  <section class="py-20 lg:py-28" style="background: #FDF0ED;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Text -->
+        <div class="reveal">
+          <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-charcoal" style="letter-spacing: -0.02em;">Community Partners</h2>
+          <p class="font-body text-warm-gray text-base lg:text-lg mt-6" style="line-height: 1.8;">
+            We believe that meaningful change requires strong partnerships. The UNSVCC collaborates with community organizations, government agencies, healthcare providers, and local businesses to expand the reach and impact of our programs.
+          </p>
+          <p class="font-body text-warm-gray text-base lg:text-lg mt-4" style="line-height: 1.8;">
+            Together with our partners, we are building a network of support that ensures no senior faces challenges alone. If your organization shares our commitment to senior advocacy, we invite you to join us.
+          </p>
+          <a href="contact.html" class="link-arrow mt-6 inline-flex">
+            Become a partner
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+          </a>
+        </div>
+        <!-- Image -->
+        <div class="reveal delay-2 rounded-2xl overflow-hidden shadow-card">
+          <img src="real_screenchots/community-partner.jpg" alt="UNSVCC community partners at an advocacy event" class="w-full h-auto object-cover" style="aspect-ratio: 10/7;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== STAY INVOLVED CTA BANNER ==================== -->
+  <section id="involved" class="relative overflow-hidden" style="background: #E74A30;">
+    <div class="absolute inset-0 pointer-events-none" style="opacity: 0.06;">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><filter id="ctaGrain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#ctaGrain)"/></svg>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="font-heading text-white font-bold text-3xl lg:text-4xl" style="letter-spacing: -0.02em;">Stay Involved</h2>
+          <p class="font-body text-white/80 text-base lg:text-lg mt-4" style="line-height: 1.8;">
+            Sign up for our newsletter to receive updates on events, advocacy wins, volunteer opportunities, and ways you can make a difference.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-3 mt-8" onsubmit="event.preventDefault(); this.querySelector('button').textContent='THANK YOU!'; this.querySelector('input').value='';">
+            <label for="team-email" class="sr-only">Email address</label>
+            <input
+              id="team-email"
+              type="email"
+              required
+              placeholder="Enter your email address"
+              class="flex-1 px-5 py-3.5 rounded-lg font-body text-base text-charcoal bg-white border-0"
+              style="min-height: 48px; outline: none;"
+            >
+            <button type="submit" style="white-space: nowrap; background: #FFFFFF; color: #333333; border-radius: 8px; min-height: 48px; padding: 14px 36px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.02em; text-transform: uppercase; border: none; cursor: pointer; transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">SUBSCRIBE</button>
+          </form>
+        </div>
+        <div class="reveal delay-2 hidden lg:flex justify-end">
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-white/10 rounded-2xl p-6 text-center">
+              <span class="font-heading font-extrabold text-white text-3xl block">500+</span>
+              <span class="font-body text-white/70 text-xs mt-1 block">Members</span>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-6 text-center">
+              <span class="font-heading font-extrabold text-white text-3xl block">12</span>
+              <span class="font-body text-white/70 text-xs mt-1 block">Programs</span>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-6 text-center">
+              <span class="font-heading font-extrabold text-white text-3xl block">30+</span>
+              <span class="font-body text-white/70 text-xs mt-1 block">Events</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer style="background: #F4F4F4; border-top: 1px solid #E8E8E8;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <!-- Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <img src="brand_assets/UNSVCC logo.svg" alt="UNSVCC Logo" class="h-12 w-auto mb-4">
+          <p class="font-body text-warm-gray text-sm max-w-xs" style="line-height: 1.7;">
+            Empowering and supporting Canadian seniors, especially those in need, as they navigate life in Canada.
+          </p>
+          <p class="font-body text-warm-gray text-sm mt-3" style="line-height: 1.7;">
+            CRA Tax compliance number:
+          </p>
+          <p class="font-heading font-bold text-charcoal text-sm">753212158RC0001</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-heading text-impact-red font-bold text-sm uppercase tracking-widest mb-5" style="letter-spacing: 0.1em;">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">About Us</a></li>
+            <li><a href="programs.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Programs</a></li>
+            <li><a href="membership.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Membership</a></li>
+            <li><a href="contact.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Get Involved -->
+        <div>
+          <h4 class="font-heading text-impact-red font-bold text-sm uppercase tracking-widest mb-5" style="letter-spacing: 0.1em;">Get Involved</h4>
+          <ul class="space-y-3">
+            <li><a href="volunteer.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Volunteer</a></li>
+            <li><a href="donate.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Donate</a></li>
+            <li><a href="contact.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Partner With Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-heading text-impact-red font-bold text-sm uppercase tracking-widest mb-5" style="letter-spacing: 0.1em;">Contact</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6E6E6E" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@unsvcc.org" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">info@unsvcc.org</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6E6E6E" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72c.12.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <a href="tel:+15197033443" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">+1 519 703 3443</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6E6E6E" stroke-width="2" class="mt-0.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span class="font-body text-warm-gray text-sm">Mon – Fri: 9:00 am – 5:00 pm</span>
+            </li>
+          </ul>
+          <!-- Social -->
+          <div class="flex gap-3 mt-6">
+            <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full flex items-center justify-center" style="background: #E74A30; min-width:44px; min-height:44px; transition: opacity 0.2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full flex items-center justify-center" style="background: #E74A30; min-width:44px; min-height:44px; transition: opacity 0.2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full flex items-center justify-center" style="background: #E74A30; min-width:44px; min-height:44px; transition: opacity 0.2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full flex items-center justify-center" style="background: #E74A30; min-width:44px; min-height:44px; transition: opacity 0.2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="border-t mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4" style="border-color: #E0E0E0;">
+        <p class="font-body text-warm-gray text-sm">Copyright &copy; 2026 United Senior Citizen Voice for Change Coalition. All rights reserved. Website by <span class="font-semibold">MAPL TECH</span>.</p>
+        <div class="flex gap-6">
+          <a href="privacy-policy.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Privacy Policy</a>
+          <a href="terms-of-use.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // Mobile nav
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const panel = document.getElementById('mobilePanel');
+    const overlay = document.getElementById('overlay');
+
+    function openNav() {
+      panel.classList.add('open');
+      overlay.classList.remove('hidden');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNav() {
+      panel.classList.remove('open');
+      overlay.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    menuBtn.addEventListener('click', openNav);
+    closeBtn.addEventListener('click', closeNav);
+    overlay.addEventListener('click', closeNav);
+    document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeNav));
+
+    // Scroll reveal
+    const els = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+    els.forEach(el => obs.observe(el));
+
+    // Bio modal
+    const bioModal = document.getElementById('bioModal');
+    const bioModalContent = document.getElementById('bioModalContent');
+
+    function openBioModal() {
+      bioModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => {
+        bioModalContent.style.opacity = '1';
+        bioModalContent.style.transform = 'translateY(0)';
+      });
+    }
+
+    function closeBioModal() {
+      bioModalContent.style.opacity = '0';
+      bioModalContent.style.transform = 'translateY(20px)';
+      setTimeout(() => {
+        bioModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !bioModal.classList.contains('hidden')) closeBioModal();
+    });
+  </script>
+
+</body>
+</html>

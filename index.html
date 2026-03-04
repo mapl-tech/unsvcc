@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNSVCC — United Senior Citizen Voice for Change Coalition</title>
+  <meta name="description" content="Amplifying the voices of senior citizens and advocating for policies, services, and community initiatives that protect their rights and enhance their well-being.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'impact-red': '#E74A30',
+            'impact-red-dark': '#C43D28',
+            'impact-red-light': '#EE6B55',
+            'advocacy-teal': '#0E7C7B',
+            'advocacy-teal-dark': '#0a5f5e',
+            'advocacy-teal-light': '#10908f',
+            'dignity-gold': '#D4883E',
+            'dignity-gold-light': '#d4b44a',
+            'charcoal': '#333333',
+            'warm-gray': '#6E6E6E',
+            'soft-gray': '#F4F4F4',
+            'light-warm': '#FDF0ED',
+            'pale-gold': '#FDF6E3',
+          },
+          fontFamily: {
+            'heading': ['Montserrat', 'sans-serif'],
+            'body': ['Open Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; color: #333333; line-height: 1.6; margin: 0; }
+
+    /* ---- Buttons ---- */
+    .btn-gold {
+      background-color: #D4883E;
+      color: #FFFFFF;
+      border-radius: 8px;
+      min-height: 48px;
+      padding: 14px 36px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 162, 39, 0.35);
+    }
+    .btn-gold:focus-visible {
+      outline: 3px solid #0E7C7B;
+      outline-offset: 2px;
+    }
+    .btn-gold:active { transform: translateY(0); }
+
+    .btn-blue {
+      background-color: #0E7C7B;
+      color: #FFFFFF;
+      border-radius: 8px;
+      min-height: 48px;
+      padding: 14px 36px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+    }
+    .btn-blue:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(14, 124, 123, 0.35);
+    }
+    .btn-blue:focus-visible {
+      outline: 3px solid #D4883E;
+      outline-offset: 2px;
+    }
+    .btn-blue:active { transform: translateY(0); }
+
+    .btn-outline {
+      background-color: transparent;
+      color: #E74A30;
+      border: 2px solid #E74A30;
+      border-radius: 8px;
+      min-height: 48px;
+      padding: 12px 32px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-outline:hover {
+      background-color: #E74A30;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+    .btn-outline:focus-visible {
+      outline: 3px solid #D4883E;
+      outline-offset: 2px;
+    }
+    .btn-outline:active { transform: translateY(0); }
+
+    /* ---- Shadows ---- */
+    .shadow-card {
+      box-shadow:
+        0 1px 3px rgba(231, 74, 48, 0.04),
+        0 4px 12px rgba(231, 74, 48, 0.06),
+        0 12px 28px rgba(231, 74, 48, 0.08);
+    }
+
+    /* ---- Nav link ---- */
+    .nav-link {
+      position: relative;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: #333333;
+      text-decoration: none;
+      padding: 4px 0;
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover { color: #C43D28; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #D4883E;
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link.active { color: #C43D28; }
+    .nav-link.active::after { display: none; }
+    .nav-link.active:hover::after { display: none; }
+    .nav-link:focus-visible {
+      outline: 2px solid #D4883E;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    /* ---- Dropdown ---- */
+    .nav-dropdown {
+      position: relative;
+    }
+    .nav-dropdown-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .nav-dropdown-trigger svg {
+      transition: transform 0.2s ease;
+    }
+    .nav-dropdown:hover .nav-dropdown-trigger svg {
+      transform: rotate(180deg);
+    }
+    .nav-dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(8px);
+      min-width: 200px;
+      background: #FFFFFF;
+      border-radius: 12px;
+      padding: 8px 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow:
+        0 4px 12px rgba(0,0,0,0.08),
+        0 12px 28px rgba(0,0,0,0.06);
+      z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #333333;
+      text-decoration: none;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .nav-dropdown-menu a:hover {
+      background: #FDF0ED;
+      color: #C43D28;
+    }
+    .nav-dropdown-menu a:focus-visible {
+      outline: 2px solid #D4883E;
+      outline-offset: -2px;
+      border-radius: 4px;
+    }
+
+    /* ---- Hero diagonal ---- */
+    .hero-diagonal {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 62%;
+      height: 100%;
+      background: #E74A30;
+      clip-path: polygon(0 0, 100% 0, 78% 100%, 0 100%);
+      z-index: 0;
+    }
+    @media (max-width: 1023px) {
+      .hero-diagonal {
+        width: 100%;
+        height: 55%;
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+      }
+    }
+
+    /* ---- Card body text clamp ---- */
+    .card-body-text {
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      max-height: 6.8em;
+    }
+
+    /* ---- Card hover ---- */
+    .card-lift {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    }
+    .card-lift:hover {
+      transform: translateY(-6px);
+      box-shadow:
+        0 4px 12px rgba(231, 74, 48, 0.06),
+        0 16px 40px rgba(231, 74, 48, 0.12);
+    }
+
+    /* ---- Scroll reveal ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    .reveal.visible {
+      animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+
+    /* ---- Progress bar ---- */
+    .progress-track {
+      background: #FDE8E4;
+      border-radius: 999px;
+      height: 12px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #0E7C7B, #D4883E);
+      transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* ---- Mobile nav ---- */
+    .mobile-panel {
+      transform: translateX(100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .mobile-panel.open { transform: translateX(0); }
+
+    /* ---- Feature pill ---- */
+    .feature-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: #333333;
+      box-shadow: 0 2px 8px rgba(231, 74, 48, 0.08);
+    }
+    .feature-pill svg { flex-shrink: 0; }
+
+    /* ---- Link arrow ---- */
+    .link-arrow {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+      color: #E74A30;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .link-arrow:hover { gap: 12px; }
+    .link-arrow:focus-visible {
+      outline: 2px solid #D4883E;
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    /* ---- Donation radio ---- */
+    .donate-radio {
+      appearance: none; -webkit-appearance: none; width: 20px; height: 20px; border: 2px solid #333333;
+      border-radius: 50%; position: relative; cursor: pointer; flex-shrink: 0;
+      transition: border-color 0.2s ease;
+    }
+    .donate-radio:checked { border-color: #E74A30; }
+    .donate-radio:checked::after {
+      content: ''; position: absolute; top: 3px; left: 3px; width: 10px; height: 10px;
+      background: #E74A30; border-radius: 50%;
+    }
+    .donate-radio:focus-visible { outline: 2px solid #D4883E; outline-offset: 2px; }
+
+    /* ---- Donation amount buttons ---- */
+    .donation-amt {
+      font-family: 'Montserrat', sans-serif; font-weight: 700; color: #333333;
+      background: #FFFFFF; border: 1.5px solid #E0E0E0; border-radius: 12px;
+      padding: 16px 8px; font-size: 18px; cursor: pointer;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    }
+    .donation-amt:hover { transform: translateY(-2px); border-color: #E74A30; }
+    .donation-amt:focus-visible { outline: 3px solid #D4883E; outline-offset: 2px; }
+    .donation-amt.selected {
+      background: #E74A30; color: #FFFFFF; border-color: #E74A30;
+      box-shadow: 0 4px 14px rgba(231, 74, 48, 0.25);
+    }
+
+    /* ---- Custom amount input ---- */
+    .custom-amount {
+      width: 100%; padding: 16px 18px 16px 36px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 18px;
+      color: #333333; background: #FFFFFF; border: 1.5px solid #E0E0E0; border-radius: 12px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease; outline: none;
+    }
+    .custom-amount::placeholder { color: #9E9E9E; font-weight: 500; }
+    .custom-amount:focus { border-color: #E74A30; box-shadow: 0 0 0 3px rgba(231, 74, 48, 0.1); }
+
+    /* ---- Donation form inputs ---- */
+    .donate-form-input {
+      width: 100%; padding: 14px 18px; font-family: 'Open Sans', sans-serif; font-size: 15px; color: #333333;
+      background: #FFFFFF; border: 1.5px solid #E0E0E0; border-radius: 12px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease; outline: none;
+    }
+    .donate-form-input::placeholder { color: #9E9E9E; }
+    .donate-form-input:focus { border-color: #E74A30; box-shadow: 0 0 0 3px rgba(231, 74, 48, 0.1); }
+  </style>
+</head>
+<body class="bg-white overflow-x-hidden">
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="sticky top-0 z-50 bg-white" style="box-shadow: 0 1px 0 rgba(0,0,0,0.06);">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3" aria-label="UNSVCC Home">
+          <img src="brand_assets/UNSVCC logo.svg" alt="UNSVCC Logo" class="h-11 w-auto">
+        </a>
+
+        <!-- Desktop links -->
+        <div class="hidden lg:flex items-center gap-8">
+          <div class="nav-dropdown">
+            <span class="nav-link nav-dropdown-trigger">
+              About Us
+              <svg width="12" height="12" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 8l5 5 5-5"/></svg>
+            </span>
+            <div class="nav-dropdown-menu">
+              <a href="about.html">Our Mandate</a>
+              <a href="team.html">Our Team</a>
+              <a href="centre.html">UNSVCC Centre</a>
+            </div>
+          </div>
+          <a href="programs.html" class="nav-link">Programs</a>
+          <a href="membership.html" class="nav-link">Membership</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="volunteer.html" class="btn-blue" style="padding: 10px 28px; min-height: 42px; font-size: 13px;">VOLUNTEER</a>
+          <a href="donate.html" class="btn-outline" style="padding: 10px 28px; min-height: 42px; font-size: 13px;">DONATE</a>
+        </div>
+
+        <!-- Mobile toggle -->
+        <button id="menuBtn" class="lg:hidden flex items-center justify-center" style="min-width:44px;min-height:44px;" aria-label="Open menu" aria-expanded="false">
+          <svg width="26" height="26" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="22" y2="7"/><line x1="4" y1="13" x2="22" y2="13"/><line x1="4" y1="19" x2="22" y2="19"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile panel -->
+    <div id="mobilePanel" class="mobile-panel fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-50 lg:hidden">
+      <div class="flex items-center justify-between p-6 border-b border-soft-gray">
+        <span class="font-heading text-impact-red font-bold text-lg">Menu</span>
+        <button id="closeBtn" class="flex items-center justify-center" style="min-width:44px;min-height:44px;" aria-label="Close menu">
+          <svg width="24" height="24" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="flex flex-col p-6 gap-1">
+        <span class="font-body text-charcoal font-semibold text-lg py-3 px-4">About Us</span>
+        <a href="about.html" class="mob-link font-body text-warm-gray font-medium text-base py-2 px-4 pl-8 rounded-lg" style="transition: background 0.2s;">Our Mandate</a>
+        <a href="team.html" class="mob-link font-body text-warm-gray font-medium text-base py-2 px-4 pl-8 rounded-lg" style="transition: background 0.2s;">Our Team</a>
+        <a href="centre.html" class="mob-link font-body text-warm-gray font-medium text-base py-2 px-4 pl-8 rounded-lg" style="transition: background 0.2s;">UNSVCC Centre</a>
+        <a href="programs.html" class="mob-link font-body text-charcoal font-semibold text-lg py-3 px-4 rounded-lg" style="transition: background 0.2s;">Programs</a>
+        <a href="membership.html" class="mob-link font-body text-charcoal font-semibold text-lg py-3 px-4 rounded-lg" style="transition: background 0.2s;">Membership</a>
+        <a href="contact.html" class="mob-link font-body text-charcoal font-semibold text-lg py-3 px-4 rounded-lg" style="transition: background 0.2s;">Contact</a>
+        <div class="mt-4 pt-4 border-t border-soft-gray">
+          <a href="volunteer.html" class="btn-blue w-full text-center">VOLUNTEER</a>
+          <a href="donate.html" class="btn-outline w-full text-center mt-3">DONATE</a>
+        </div>
+      </div>
+    </div>
+    <div id="overlay" class="fixed inset-0 bg-black/30 z-40 hidden lg:hidden"></div>
+  </nav>
+
+
+  <!-- ==================== HERO ==================== -->
+  <section class="relative overflow-hidden" style="min-height: 600px; background: #FDF0ED;">
+    <!-- Diagonal blue background -->
+    <div class="hero-diagonal"></div>
+
+    <!-- Subtle accent stripe at very top -->
+    <div class="absolute top-0 left-0 right-0 h-1 z-10" style="background: linear-gradient(90deg, #D4883E 0%, #D4883E 30%, transparent 30%);"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 items-center pt-16 pb-20 lg:pt-20 lg:pb-28">
+        <!-- Left: text content -->
+        <div class="order-2 lg:order-1">
+          <p class="font-body text-sm lg:text-base mb-4 lg:text-white/80 text-charcoal" style="line-height: 1.7; max-width: 380px;">
+            Free community-based advocacy, resources, and support for senior citizens across our communities.
+          </p>
+          <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4rem] lg:text-white text-impact-red leading-[1.06]" style="letter-spacing: -0.03em;">
+            United Senior Citizen<br>Voice for Change Coalition
+          </h1>
+          <a href="contact.html" class="btn-gold mt-8 inline-flex">
+            GET INVOLVED
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+          </a>
+        </div>
+
+        <!-- Right: hero image -->
+        <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+          <div class="relative w-full max-w-md lg:max-w-lg">
+            <img
+              src="real_screenchots/ottawacancer-hero-image.jpg"
+              alt="Happy senior couple smiling together outdoors"
+              class="w-full h-auto rounded-3xl object-cover shadow-card"
+              style="aspect-ratio: 7/6;"
+            >
+            <!-- Small floating accent card -->
+            <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-card hidden lg:flex items-center gap-3" style="min-width: 200px;">
+              <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background: #0E7C7B;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <div>
+                <span class="font-heading font-bold text-impact-red text-lg block leading-tight">500+</span>
+                <span class="font-body text-warm-gray text-xs">Active Members</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature pills row -->
+      <div class="flex flex-wrap gap-3 pb-12 lg:pb-16 relative z-10">
+        <div class="feature-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Policy Advocacy
+        </div>
+        <div class="feature-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Community Programs
+        </div>
+        <div class="feature-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Education &amp; Outreach
+        </div>
+        <div class="feature-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0E7C7B" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          Rights Protection
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== DONATION SECTION ==================== -->
+  <section class="py-16 lg:py-24" style="background: #F4F4F4;">
+    <div class="max-w-2xl mx-auto px-6 lg:px-8">
+      <div class="reveal">
+        <!-- Donation type toggle -->
+        <div class="flex items-center justify-center gap-8 sm:gap-10">
+          <label class="flex items-center gap-2.5 cursor-pointer">
+            <input type="radio" name="donationType" value="onetime" checked class="donate-radio">
+            <span class="font-heading font-bold text-sm uppercase tracking-wide text-charcoal">One Time Donation</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer">
+            <input type="radio" name="donationType" value="monthly" class="donate-radio">
+            <span class="font-heading font-bold text-sm uppercase tracking-wide text-charcoal">Monthly Donation</span>
+          </label>
+        </div>
+
+        <!-- Amount buttons -->
+        <div class="grid grid-cols-4 gap-3 sm:gap-4 mt-10">
+          <button class="donation-amt selected" data-amount="58" onclick="selectAmount(this)">$58</button>
+          <button class="donation-amt" data-amount="108" onclick="selectAmount(this)">$108</button>
+          <button class="donation-amt" data-amount="258" onclick="selectAmount(this)">$258</button>
+          <button class="donation-amt" data-amount="508" onclick="selectAmount(this)">$508</button>
+        </div>
+
+        <!-- Custom amount -->
+        <div class="relative mt-4">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 font-heading font-bold text-lg text-warm-gray pointer-events-none">$</span>
+          <input type="number" class="custom-amount" placeholder="Custom amount" min="1" onfocus="clearAmountSelection()" id="customAmount">
+        </div>
+      </div>
+
+      <!-- Donor info -->
+      <div class="mt-10 space-y-5 reveal delay-1">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <input type="text" placeholder="First Name" class="donate-form-input" id="donorFirst">
+          <input type="text" placeholder="Last Name" class="donate-form-input" id="donorLast">
+        </div>
+        <input type="email" placeholder="Email Address (for tax receipt)" class="donate-form-input" id="donorEmail">
+
+        <!-- Donate button -->
+        <button class="w-full mt-4 font-heading font-bold text-base uppercase tracking-wide cursor-pointer"
+          style="background: #D4883E; color: #FFFFFF; border: none; border-radius: 12px; padding: 18px 36px; min-height: 56px;
+          transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;"
+          onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(201,162,39,0.35)';"
+          onmouseout="this.style.transform=''; this.style.boxShadow='';">
+          DONATE NOW
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== MISSION DESCRIPTION STRIP ==================== -->
+  <section class="py-16 lg:py-20 bg-white border-b" style="border-color: #F0F0F0;">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center reveal">
+      <p class="font-body text-charcoal text-lg lg:text-xl leading-relaxed" style="line-height: 1.8;">
+        The <strong class="text-impact-red">United Senior Citizen Voice for Change Coalition</strong> provides vital advocacy, education, and community support for seniors. We empower older adults to participate in the decisions that affect their healthcare, housing, finances, and quality of life — because every senior deserves to be heard.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ==================== FEATURED PROGRAMS ==================== -->
+  <section id="programs" class="py-20 lg:py-28" style="background: #F4F4F4;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-charcoal text-center mb-14" style="letter-spacing: -0.02em;">Featured Programs</h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Card 1: Grocery Bag Food Program -->
+        <div class="reveal delay-1 bg-white rounded-2xl overflow-hidden shadow-card card-lift">
+          <img src="real_screenchots/food-program.png" alt="Grocery Bag Food Program" class="w-full h-52 object-cover">
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-charcoal text-lg leading-snug">Grocery Bag Food Program</h3>
+            <p class="font-body text-warm-gray text-sm mt-3 card-body-text" style="line-height: 1.7;">The Coalition Grocery Bag Food Program is designed to give seniors access to food on a weekly or as needed basis for a $25 donation for a bag of groceries valued up to $100 per bag. This is not a food bank program; our services are exclusive to coalition members.</p>
+            <a href="programs.html" class="link-arrow mt-5 inline-flex text-sm">
+              Learn More
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Housing Support -->
+        <div class="reveal delay-2 bg-white rounded-2xl overflow-hidden shadow-card card-lift">
+          <img src="real_screenchots/housing.png" alt="Housing Support program" class="w-full h-52 object-cover">
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-charcoal text-lg leading-snug">Housing Support</h3>
+            <p class="font-body text-warm-gray text-sm mt-3 card-body-text" style="line-height: 1.7;">The Coalition Housing Support program provides members with rental apartment information stored in our national database for rent through the goodwill of some residential property management companies and building owners.</p>
+            <a href="programs.html" class="link-arrow mt-5 inline-flex text-sm">
+              Learn More
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: Support Line -->
+        <div class="reveal delay-3 bg-white rounded-2xl overflow-hidden shadow-card card-lift">
+          <img src="real_screenchots/support-line.png" alt="Support Line program" class="w-full h-52 object-cover">
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-charcoal text-lg leading-snug">Support Line</h3>
+            <p class="font-body text-warm-gray text-sm mt-3 card-body-text" style="line-height: 1.7;">This is for when a member has a problem and doesn't know what to do. We are here to answer their questions and help if we can. We will work with all levels of government agencies, large and small businesses, and individuals to get the information, answers, and favourable results for our members.</p>
+            <a href="programs.html" class="link-arrow mt-5 inline-flex text-sm">
+              Learn More
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4: Legal Services -->
+        <div class="reveal delay-1 bg-white rounded-2xl overflow-hidden shadow-card card-lift">
+          <img src="real_screenchots/legal.png" alt="Legal Services program" class="w-full h-52 object-cover">
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-charcoal text-lg leading-snug">Legal Services</h3>
+            <p class="font-body text-warm-gray text-sm mt-3 card-body-text" style="line-height: 1.7;">The United Senior Citizen Voice-for-Change Coalition gives its members easy access to professional and affordable legal advice and representation at reduced rates from a group of panel lawyers and paralegal services.</p>
+            <a href="programs.html" class="link-arrow mt-5 inline-flex text-sm">
+              Learn More
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 5: Group Insurance Support -->
+        <div class="reveal delay-2 bg-white rounded-2xl overflow-hidden shadow-card card-lift">
+          <img src="real_screenchots/group-insurance.png" alt="Group Insurance Support program" class="w-full h-52 object-cover">
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-charcoal text-lg leading-snug">Group Insurance Support</h3>
+            <p class="font-body text-warm-gray text-sm mt-3 card-body-text" style="line-height: 1.7;">Membership gives you exclusive access to group insurance rates on home, auto, and content insurance not available to everyone. The Coalition does not provide information on any insurance products or services. Members are referred to a selected group of insurance providers and business partners in support of the Coalition programs and services.</p>
+            <a href="programs.html" class="link-arrow mt-5 inline-flex text-sm">
+              Learn More
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 6: Retirement Planning Support -->
+        <div class="reveal delay-3 bg-white rounded-2xl overflow-hidden shadow-card card-lift">
+          <img src="real_screenchots/retirement.png" alt="Retirement Planning Support program" class="w-full h-52 object-cover">
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-charcoal text-lg leading-snug">Retirement Planning Support</h3>
+            <p class="font-body text-warm-gray text-sm mt-3 card-body-text" style="line-height: 1.7;">No matter where you are on your journey to retirement, the transition from work to retirement is necessary financially. The Coalition will host retirement planning workshops with representatives from different groups and organizations to provide services and get feedback on people's feelings regarding retirement.</p>
+            <a href="programs.html" class="link-arrow mt-5 inline-flex text-sm">
+              Learn More
+              <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- See All Programs button -->
+      <div class="text-center mt-12">
+        <a href="programs.html" class="btn-blue" style="padding: 14px 40px;">SEE ALL PROGRAMS</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== IMPACT STATS STRIP ==================== -->
+  <section id="impact" class="bg-white">
+    <div class="max-w-5xl mx-auto px-6 lg:px-8 py-16 lg:py-20 text-center">
+      <h2 class="font-heading font-extrabold text-3xl lg:text-4xl text-charcoal" style="letter-spacing: -0.02em;">Our Impact</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 mt-12">
+        <div class="reveal delay-1">
+          <span class="font-heading font-extrabold text-4xl lg:text-5xl text-impact-red block" style="letter-spacing: -0.02em;">10+</span>
+          <span class="font-body font-semibold text-charcoal text-base mt-2 block">Support Programs</span>
+        </div>
+        <div class="reveal delay-2">
+          <span class="font-heading font-extrabold text-4xl lg:text-5xl text-charcoal block" style="letter-spacing: -0.02em;">1000+</span>
+          <span class="font-body font-semibold text-charcoal text-base mt-2 block">Meals Provided</span>
+        </div>
+        <div class="reveal delay-3">
+          <span class="font-heading font-extrabold text-4xl lg:text-5xl text-impact-red block" style="letter-spacing: -0.02em;">100+</span>
+          <span class="font-body font-semibold text-charcoal text-base mt-2 block">Seniors Supported</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== HELP US / DONATION GOAL ==================== -->
+  <section id="donate" class="py-16 lg:py-24" style="background: #FDF0ED;">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <div class="text-center reveal delay-1">
+        <h3 class="font-heading text-impact-red font-bold text-2xl lg:text-3xl" style="letter-spacing: -0.02em;">
+          Help us empower more seniors in our community
+        </h3>
+      </div>
+
+      <!-- Progress bars -->
+      <div class="mt-12 space-y-8 reveal delay-2">
+        <div>
+          <div class="flex justify-between items-end mb-2">
+            <span class="font-body font-semibold text-charcoal text-sm">Community Programs Fund</span>
+            <span class="font-heading font-bold text-advocacy-teal text-lg">$12,400 <span class="text-warm-gray font-normal text-sm">/ $20,000</span></span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 62%;"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between items-end mb-2">
+            <span class="font-body font-semibold text-charcoal text-sm">Senior Rights Education</span>
+            <span class="font-heading font-bold text-advocacy-teal text-lg">$7,800 <span class="text-warm-gray font-normal text-sm">/ $15,000</span></span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 52%;"></div>
+          </div>
+        </div>
+        <div>
+          <div class="flex justify-between items-end mb-2">
+            <span class="font-body font-semibold text-charcoal text-sm">UNSVCC Centre Building Fund</span>
+            <span class="font-heading font-bold text-advocacy-teal text-lg">$34,200 <span class="text-warm-gray font-normal text-sm">/ $100,000</span></span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 34%;"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10 reveal delay-3">
+        <a href="donate.html" class="btn-gold inline-flex">SUPPORT OUR CAUSE</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== ABOUT / TWO-COL LEFT IMAGE ==================== -->
+  <section id="about" class="py-20 lg:py-28" style="background: #F4F4F4;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <!-- Image -->
+        <div class="reveal rounded-2xl overflow-hidden shadow-card">
+          <img src="real_screenchots/about-us.jpg" alt="Caregiver assisting seniors at a UNSVCC community gathering" class="w-full h-auto object-cover" style="aspect-ratio: 10/7;">
+        </div>
+        <!-- Text -->
+        <div class="reveal delay-2">
+          <span class="font-heading font-bold text-sm text-advocacy-teal uppercase tracking-widest" style="letter-spacing: 0.12em;">About Us</span>
+          <h2 class="font-heading text-impact-red font-bold text-3xl lg:text-4xl mt-3" style="letter-spacing: -0.02em;">
+            A safe space for advocacy and community support
+          </h2>
+          <p class="font-body text-charcoal text-base lg:text-lg mt-6" style="line-height: 1.8;">
+            Our coalition brings together seniors, families, and caregivers in a welcoming environment where voices are heard and real change happens. From policy workshops to social gatherings, we provide the resources and support older adults need to thrive.
+          </p>
+          <a href="about.html" class="link-arrow mt-6 inline-flex">
+            Learn more about us
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== STAY INVOLVED CTA BANNER ==================== -->
+  <section id="involved" class="relative overflow-hidden" style="background: #E74A30;">
+    <div class="absolute inset-0 pointer-events-none" style="opacity: 0.06;">
+      <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#grain)"/></svg>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal">
+          <h2 class="font-heading text-white font-bold text-3xl lg:text-4xl" style="letter-spacing: -0.02em;">Stay Involved</h2>
+          <p class="font-body text-white/80 text-base lg:text-lg mt-4" style="line-height: 1.8;">
+            Sign up for our newsletter to receive updates on events, advocacy wins, volunteer opportunities, and ways you can make a difference.
+          </p>
+          <form class="flex flex-col sm:flex-row gap-3 mt-8" onsubmit="event.preventDefault(); this.querySelector('button').textContent='THANK YOU!'; this.querySelector('input').value='';">
+            <label for="email" class="sr-only">Email address</label>
+            <input
+              id="email"
+              type="email"
+              required
+              placeholder="Enter your email address"
+              class="flex-1 px-5 py-3.5 rounded-lg font-body text-base text-charcoal bg-white border-0"
+              style="min-height: 48px; outline: none;"
+            >
+            <button type="submit" style="white-space: nowrap; background: #FFFFFF; color: #333333; border-radius: 8px; min-height: 48px; padding: 14px 36px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 0.02em; text-transform: uppercase; border: none; cursor: pointer; transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.15)';" onmouseout="this.style.transform=''; this.style.boxShadow='';">SUBSCRIBE</button>
+          </form>
+        </div>
+        <div class="reveal delay-2 hidden lg:flex justify-end">
+          <div class="grid grid-cols-3 gap-4">
+            <div class="bg-white/10 rounded-2xl p-6 text-center">
+              <span class="font-heading font-extrabold text-white text-3xl block">500+</span>
+              <span class="font-body text-white/70 text-xs mt-1 block">Members</span>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-6 text-center">
+              <span class="font-heading font-extrabold text-white text-3xl block">12</span>
+              <span class="font-body text-white/70 text-xs mt-1 block">Programs</span>
+            </div>
+            <div class="bg-white/10 rounded-2xl p-6 text-center">
+              <span class="font-heading font-extrabold text-white text-3xl block">30+</span>
+              <span class="font-body text-white/70 text-xs mt-1 block">Events</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==================== COMMUNITY IMAGE + TEXT ==================== -->
+  <section class="py-20 lg:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="reveal">
+          <span class="font-heading font-bold text-sm text-advocacy-teal uppercase tracking-widest" style="letter-spacing: 0.12em;">Our Community</span>
+          <h2 class="font-heading text-impact-red font-bold text-3xl lg:text-4xl mt-3" style="letter-spacing: -0.02em;">
+            Transforming Senior Advocacy, Together
+          </h2>
+          <p class="font-body text-charcoal text-base lg:text-lg mt-6" style="line-height: 1.8;">
+            Behind every policy change is a community of determined seniors who refused to be silent. Our coalition is built on the belief that dignity, equity, and transparency are not privileges — they are rights. Together, we're building a future where every senior thrives.
+          </p>
+          <div class="flex flex-wrap gap-4 mt-8">
+            <a href="membership.html" class="btn-blue">JOIN US TODAY</a>
+            <a href="contact.html" class="btn-outline">CONTACT US</a>
+          </div>
+        </div>
+        <div class="reveal delay-2 rounded-2xl overflow-hidden shadow-card">
+          <img src="real_screenchots/our community.jpg" alt="Group of diverse seniors smiling together at a UNSVCC event" class="w-full h-auto object-cover" style="aspect-ratio: 10/7;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer id="contact" style="background: #F4F4F4; border-top: 1px solid #E8E8E8;">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-16 pb-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+        <!-- Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <img src="brand_assets/UNSVCC logo.svg" alt="UNSVCC Logo" class="h-12 w-auto mb-4">
+          <p class="font-body text-warm-gray text-sm max-w-xs" style="line-height: 1.7;">
+            Empowering and supporting Canadian seniors, especially those in need, as they navigate life in Canada.
+          </p>
+          <p class="font-body text-warm-gray text-sm mt-3" style="line-height: 1.7;">
+            CRA Tax compliance number:
+          </p>
+          <p class="font-heading font-bold text-charcoal text-sm">753212158RC0001</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-heading text-impact-red font-bold text-sm uppercase tracking-widest mb-5" style="letter-spacing: 0.1em;">Quick Links</h4>
+          <ul class="space-y-3">
+            <li><a href="about.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">About Us</a></li>
+            <li><a href="programs.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Programs</a></li>
+            <li><a href="membership.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Membership</a></li>
+            <li><a href="contact.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Get Involved -->
+        <div>
+          <h4 class="font-heading text-impact-red font-bold text-sm uppercase tracking-widest mb-5" style="letter-spacing: 0.1em;">Get Involved</h4>
+          <ul class="space-y-3">
+            <li><a href="volunteer.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Volunteer</a></li>
+            <li><a href="donate.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Donate</a></li>
+            <li><a href="contact.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Partner With Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-heading text-impact-red font-bold text-sm uppercase tracking-widest mb-5" style="letter-spacing: 0.1em;">Contact</h4>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6E6E6E" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:info@unsvcc.org" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">info@unsvcc.org</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6E6E6E" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.11 2 2 0 014.11 2h3a2 2 0 012 1.72c.12.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <a href="tel:+15197033443" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">+1 519 703 3443</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#6E6E6E" stroke-width="2" class="mt-0.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span class="font-body text-warm-gray text-sm">Mon – Fri: 9:00 am – 5:00 pm</span>
+            </li>
+          </ul>
+          <!-- Social -->
+          <div class="flex gap-3 mt-6">
+            <a href="#" aria-label="Facebook" class="w-10 h-10 rounded-full flex items-center justify-center" style="background: #E74A30; min-width:44px; min-height:44px; transition: opacity 0.2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="Twitter" class="w-10 h-10 rounded-full flex items-center justify-center" style="background: #E74A30; min-width:44px; min-height:44px; transition: opacity 0.2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram" class="w-10 h-10 rounded-full flex items-center justify-center" style="background: #E74A30; min-width:44px; min-height:44px; transition: opacity 0.2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn" class="w-10 h-10 rounded-full flex items-center justify-center" style="background: #E74A30; min-width:44px; min-height:44px; transition: opacity 0.2s;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom -->
+      <div class="border-t mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4" style="border-color: #E0E0E0;">
+        <p class="font-body text-warm-gray text-sm">Copyright &copy; 2026 United Senior Citizen Voice for Change Coalition. All rights reserved. Website by <span class="font-semibold">MAPL TECH</span>.</p>
+        <div class="flex gap-6">
+          <a href="privacy-policy.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Privacy Policy</a>
+          <a href="terms-of-use.html" class="font-body text-warm-gray text-sm hover:text-impact-red" style="transition: color 0.2s;">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // Mobile nav
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const panel = document.getElementById('mobilePanel');
+    const overlay = document.getElementById('overlay');
+
+    function openNav() {
+      panel.classList.add('open');
+      overlay.classList.remove('hidden');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeNav() {
+      panel.classList.remove('open');
+      overlay.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+    menuBtn.addEventListener('click', openNav);
+    closeBtn.addEventListener('click', closeNav);
+    overlay.addEventListener('click', closeNav);
+    document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', closeNav));
+
+    // Scroll reveal
+    const els = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+    els.forEach(el => obs.observe(el));
+
+    // Donation amount selector
+    function selectAmount(btn) {
+      document.querySelectorAll('.donation-amt').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('customAmount').value = '';
+    }
+
+    function clearAmountSelection() {
+      document.querySelectorAll('.donation-amt').forEach(b => b.classList.remove('selected'));
+    }
+  </script>
+
+</body>
+</html>
