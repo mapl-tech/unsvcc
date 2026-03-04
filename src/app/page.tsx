@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       {/* ==================== HERO ==================== */}
-      <section className="relative overflow-hidden" style={{ minHeight: '600px', background: '#FDF0ED' }}>
+      <section className="relative overflow-hidden min-h-[auto] lg:min-h-[600px]" style={{ background: '#FDF0ED' }}>
         {/* Diagonal red background */}
         <div className="hero-diagonal"></div>
 
@@ -20,7 +20,7 @@ export default function HomePage() {
         ></div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center pt-12 pb-16 lg:pt-20 lg:pb-28">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center pt-8 pb-10 lg:pt-20 lg:pb-28">
             {/* Left: text content */}
             <div className="order-2 lg:order-1">
               <p
@@ -43,7 +43,7 @@ export default function HomePage() {
 
             {/* Right: hero image */}
             <div className="order-1 lg:order-2 flex justify-center lg:justify-end">
-              <div className="relative w-full max-w-md lg:max-w-lg">
+              <div className="relative w-full max-w-xs sm:max-w-md lg:max-w-lg">
                 <img
                   src="/images/hero/ottawacancer-hero-image.jpg"
                   alt="Happy senior couple smiling together outdoors"
