@@ -171,7 +171,7 @@ export default function Footer() {
           <p className="font-body text-warm-gray text-sm">
             Copyright &copy; {new Date().getFullYear()} United Senior Citizen
             Voice for Change Coalition. All rights reserved. Website by{' '}
-            <span className="font-semibold">MAPL TECH</span>.
+            <a href="https://mapltech.com/" target="_blank" rel="noopener noreferrer" className="font-semibold hover:text-impact-red" style={{ transition: 'color 0.2s' }}>MAPL TECH</a>.
           </p>
           <div className="flex gap-6">
             <Link
