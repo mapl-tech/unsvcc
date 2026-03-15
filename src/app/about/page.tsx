@@ -5,7 +5,9 @@ import StayInvolvedCTA from '@/components/layout/StayInvolvedCTA';
 import ReadMoreToggle from './ReadMoreToggle';
 
 export const metadata: Metadata = {
-  title: 'Our Mandate',
+  title: 'About Us & Our Mandate | Senior Advocacy Stratford Ontario',
+  description: 'Learn about UNSVCC, a Stratford, Ontario nonprofit dedicated to fighting senior citizen poverty in Canada through advocacy, community programs, and policy change.',
+  alternates: { canonical: 'https://unsvcc.org/about' },
 };
 
 export default function AboutPage() {
@@ -125,7 +127,7 @@ export default function AboutPage() {
                 className="font-body text-warm-gray text-base lg:text-lg mt-4"
                 style={{ lineHeight: 1.8 }}
               >
-                We strive to build inclusive communities where the wisdom and experience of seniors are recognized as essential to shaping a just and compassionate society — where no senior is left behind, unheard, or underserved.
+                Based in Stratford, Ontario, we strive to build inclusive communities across Canada where the wisdom and experience of seniors are recognized as essential to shaping a just and compassionate society, where no senior is left behind, unheard, or underserved.
               </p>
             </ScrollReveal>
             {/* Image */}

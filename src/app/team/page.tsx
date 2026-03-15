@@ -5,7 +5,9 @@ import StayInvolvedCTA from '@/components/layout/StayInvolvedCTA';
 import BioModal from './BioModal';
 
 export const metadata: Metadata = {
-  title: 'Our Team',
+  title: 'Our Team | UNSVCC Leadership Stratford Ontario',
+  description: 'Meet the dedicated team behind UNSVCC in Stratford, Ontario, working to advocate for and support Canadian seniors through community programs and services.',
+  alternates: { canonical: 'https://unsvcc.org/team' },
 };
 
 export default function TeamPage() {

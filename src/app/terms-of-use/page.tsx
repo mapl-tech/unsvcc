@@ -5,6 +5,8 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Terms of Use',
+  description: 'Review the terms of use for the UNSVCC website and services.',
+  alternates: { canonical: 'https://unsvcc.org/terms-of-use' },
 };
 
 export default function TermsOfUsePage() {

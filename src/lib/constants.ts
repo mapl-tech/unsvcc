@@ -41,13 +41,28 @@ export const SOCIAL_LINKS = [
   { label: 'LinkedIn', href: '#', icon: 'linkedin' as const },
 ]
 
-export const PROGRESS_BARS = [
-  { label: 'Community Programs Fund', current: 12400, goal: 20000, percent: 62 },
-  { label: 'Senior Rights Education', current: 7800, goal: 15000, percent: 52 },
-  { label: 'UNSVCC Centre Building Fund', current: 34200, goal: 100000, percent: 34 },
+export const FUNDING_GOALS = [
+  { label: 'Access to Food Resources', goal: 82800 },
+  { label: 'Computers & Digital Support Services', goal: 39400 },
+  { label: 'Digital Skills Training Program', goal: 59400 },
 ]
 
 export const FEATURED_PROGRAMS = [
+  {
+    title: 'Access to Food Resources',
+    image: '/images/programs/food-program.png',
+    description: 'UNSVCC provides a variety of food programs that support older adults in maintaining healthy eating habits. The coalition will establish food support centers exclusively for seniors, providing them with enough food to eliminate the worry of having enough to eat tomorrow.',
+  },
+  {
+    title: 'Computers & Digital Support Services',
+    image: '/images/programs/digital-skills.jpg',
+    description: 'UNSVCC provides computers and digital support services to help seniors stay connected and access essential online resources, from setting up devices to troubleshooting issues and accessing online government services, banking, and telehealth.',
+  },
+  {
+    title: 'Digital Skills Training Program',
+    image: '/images/programs/non-political.jpg',
+    description: 'The program aims to support seniors by providing digital literacy training. These skills can help seniors access community resources through digital platforms and enhance their quality of life by improving their social connections.',
+  },
   {
     title: 'Advocating for Seniors',
     image: '/images/programs/advocating.jpg',
@@ -62,21 +77,6 @@ export const FEATURED_PROGRAMS = [
     title: 'Housing Challenges Facing Seniors',
     image: '/images/programs/housing.png',
     description: 'The coalition housing database programs provide seniors with information on homes available for rent throughout our national rental apartment database, with rent payment up to 30% below market value.',
-  },
-  {
-    title: 'Access to Food Resources',
-    image: '/images/programs/food-program.png',
-    description: 'UNSVCC provides a variety of food programs that support older adults in maintaining healthy eating habits. The coalition will establish food support centers exclusively for seniors, providing them with enough food to eliminate the worry of having enough to eat tomorrow.',
-  },
-  {
-    title: 'Health and Wellness Support',
-    image: '/images/programs/health-wellness.jpg',
-    description: 'The Coalition Family Support Wellness and Safety Intervention team provides home visitation or telephone reassurance checks on a senior citizen to determine the wellness of that person.',
-  },
-  {
-    title: 'Digital Skills Training Program',
-    image: '/images/programs/digital-skills.jpg',
-    description: 'The program aims to support seniors by providing digital literacy training. These skills can help seniors access community resources through digital platforms and enhance their quality of life by improving their social connections.',
   },
 ]
 

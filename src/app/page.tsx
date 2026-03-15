@@ -1,9 +1,16 @@
+import type { Metadata } from 'next'
 import ScrollReveal from '@/components/ui/ScrollReveal'
 import StayInvolvedCTA from '@/components/layout/StayInvolvedCTA'
 import DonationWidget from '@/components/forms/DonationWidget'
 import Link from 'next/link'
 import { ArrowRightIcon, CheckCircleIcon, UsersIcon, HandHeartIcon, HeartShieldIcon } from '@/components/icons'
-import { FEATURED_PROGRAMS, PROGRESS_BARS } from '@/lib/constants'
+import { FEATURED_PROGRAMS, FUNDING_GOALS } from '@/lib/constants'
+
+export const metadata: Metadata = {
+  title: 'UNSVCC — Senior Citizen Advocacy in Stratford, Ontario | United Senior Citizen Voice for Change Coalition',
+  description: 'UNSVCC is a nonprofit in Stratford, Ontario supporting Canadian seniors with food programs, affordable housing, digital skills training, legal services, and community advocacy.',
+  alternates: { canonical: 'https://unsvcc.org' },
+}
 
 export default function HomePage() {
   return (
@@ -228,7 +235,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <ScrollReveal>
             <p className="font-body text-charcoal text-base sm:text-lg lg:text-xl leading-relaxed" style={{ lineHeight: 1.8 }}>
-              The <strong className="text-impact-red">United Senior Citizen Voice for Change Coalition</strong> provides vital advocacy, education, and community support for seniors. We empower older adults to participate in the decisions that affect their healthcare, housing, finances, and quality of life — because every senior deserves to be heard.
+              The <strong className="text-impact-red">United Senior Citizen Voice for Change Coalition</strong>, based in Stratford, Ontario, provides vital advocacy, education, and community support for seniors across Canada. We empower older adults to participate in the decisions that affect their healthcare, housing, finances, and quality of life, because every senior deserves to be heard.
             </p>
           </ScrollReveal>
         </div>
@@ -334,7 +341,7 @@ export default function HomePage() {
       </section>
 
 
-      {/* ==================== HELP US / DONATION GOAL ==================== */}
+      {/* ==================== HELP US / FUNDING NEEDS ==================== */}
       <section id="donate" className="py-14 lg:py-24" style={{ background: '#FDF0ED' }}>
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <ScrollReveal delay={1}>
@@ -343,28 +350,36 @@ export default function HomePage() {
                 className="font-heading text-impact-red font-bold text-xl sm:text-2xl lg:text-3xl"
                 style={{ letterSpacing: '-0.02em' }}
               >
-                Help us empower more seniors in our community
+                We Need Your Support
               </h3>
+              <p
+                className="font-body text-warm-gray text-base lg:text-lg mt-4"
+                style={{ lineHeight: 1.8 }}
+              >
+                Our programs depend on the generosity of people like you. Help us fund the services that make a real difference in the lives of Canadian seniors.
+              </p>
             </div>
           </ScrollReveal>
 
-          {/* Progress bars */}
           <ScrollReveal delay={2}>
-            <div className="mt-10 lg:mt-12 space-y-6 lg:space-y-8">
-              {PROGRESS_BARS.map((bar) => (
-                <div key={bar.label}>
-                  <div className="flex justify-between items-end mb-2">
-                    <span className="font-body font-semibold text-charcoal text-xs sm:text-sm">{bar.label}</span>
-                    <span className="font-heading font-bold text-advocacy-teal text-base lg:text-lg">
-                      ${bar.current.toLocaleString()}{' '}
-                      <span className="text-warm-gray font-normal text-xs sm:text-sm">
-                        / ${bar.goal.toLocaleString()}
-                      </span>
-                    </span>
-                  </div>
-                  <div className="progress-track">
-                    <div className="progress-fill" style={{ width: `${bar.percent}%` }}></div>
-                  </div>
+            <div className="mt-10 lg:mt-12 space-y-6">
+              {FUNDING_GOALS.map((item) => (
+                <div
+                  key={item.label}
+                  className="bg-white rounded-2xl p-6 sm:p-8 shadow-card text-center"
+                >
+                  <span className="font-body font-semibold text-charcoal text-sm sm:text-base block">
+                    {item.label}
+                  </span>
+                  <span
+                    className="font-heading font-extrabold text-impact-red text-3xl sm:text-4xl lg:text-5xl block mt-3"
+                    style={{ letterSpacing: '-0.02em' }}
+                  >
+                    ${item.goal.toLocaleString()}
+                  </span>
+                  <span className="font-body text-warm-gray text-sm mt-1 block">
+                    needed to fund this program
+                  </span>
                 </div>
               ))}
             </div>
@@ -373,7 +388,7 @@ export default function HomePage() {
           <ScrollReveal delay={3}>
             <div className="text-center mt-8 lg:mt-10">
               <Link href="/donate" className="btn-gold inline-flex">
-                SUPPORT OUR CAUSE
+                DONATE NOW
               </Link>
             </div>
           </ScrollReveal>
@@ -451,7 +466,7 @@ export default function HomePage() {
                 className="font-body text-charcoal text-base lg:text-lg mt-5 lg:mt-6"
                 style={{ lineHeight: 1.8 }}
               >
-                Behind every policy change is a community of determined seniors who refused to be silent. Our coalition is built on the belief that dignity, equity, and transparency are not privileges — they are rights. Together, we&apos;re building a future where every senior thrives.
+                Behind every policy change is a community of determined seniors who refused to be silent. Based in Stratford, Ontario, our coalition is built on the belief that dignity, equity, and transparency are not privileges, they are rights. Together, we&apos;re building a future where every senior in Canada thrives.
               </p>
               <div className="flex flex-wrap gap-3 sm:gap-4 mt-6 lg:mt-8">
                 <Link href="/membership" className="btn-blue">

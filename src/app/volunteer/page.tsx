@@ -7,7 +7,9 @@ import VolunteerForm from '@/components/forms/VolunteerForm'
 import AccordionFAQ from '@/components/sections/volunteer/AccordionFAQ'
 
 export const metadata: Metadata = {
-  title: 'Volunteer',
+  title: 'Volunteer With Us | Help Seniors in Stratford Ontario',
+  description: 'Volunteer with UNSVCC in Stratford, Ontario and help make a difference in the lives of Canadian seniors through community programs and advocacy.',
+  alternates: { canonical: 'https://unsvcc.org/volunteer' },
 }
 
 export default function VolunteerPage() {

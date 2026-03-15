@@ -5,7 +5,9 @@ import GrainOverlay from '@/components/ui/GrainOverlay';
 import StayInvolvedCTA from '@/components/layout/StayInvolvedCTA';
 
 export const metadata: Metadata = {
-  title: 'UNSVCC Centre',
+  title: 'UNSVCC Community Centre | Senior Resources Stratford Ontario',
+  description: 'The UNSVCC Centre in Stratford, Ontario will be a one-stop resource hub for seniors, offering programs, services, and community support to fight senior poverty.',
+  alternates: { canonical: 'https://unsvcc.org/centre' },
 };
 
 export default function CentrePage() {
@@ -62,7 +64,7 @@ export default function CentrePage() {
               style={{ lineHeight: 1.9 }}
             >
               The UNSVCC Centre will be a one-stop-shop for seniors to access resources, services,
-              and support to help fight senior poverty through real, actionable programs —
+              and support to help fight senior poverty through real, actionable programs,
               independently funded by membership, donations, and community partnerships.
             </p>
           </ScrollReveal>
@@ -255,8 +257,8 @@ export default function CentrePage() {
             >
               In return, donors will be recognized on our Foundation Builders Wall, receive
               membership benefits, and be part of something historic. Let&apos;s build a place of{' '}
-              <strong className="text-charcoal">HOPE</strong> — for parents, grandparents, friends,
-              and neighbors — where we can share resources and find solutions for seniors.
+              <strong className="text-charcoal">HOPE</strong>, for parents, grandparents, friends,
+              and neighbors in Stratford, Ontario and across Canada, where we can share resources and find solutions for seniors.
             </p>
             <p className="font-heading font-bold text-charcoal text-base mt-8 text-center">
               Together, YES, WE CAN.

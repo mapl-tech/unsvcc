@@ -6,7 +6,9 @@ import StayInvolvedCTA from '@/components/layout/StayInvolvedCTA'
 import ContactForm from '@/components/forms/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
+  title: 'Contact Us | UNSVCC Stratford Ontario',
+  description: 'Get in touch with UNSVCC in Stratford, Ontario. Call us at 519-703-3443 for general inquiries or 416-434-0165 for membership services. We are here to help Canadian seniors.',
+  alternates: { canonical: 'https://unsvcc.org/contact' },
 }
 
 export default function ContactPage() {

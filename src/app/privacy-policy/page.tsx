@@ -4,6 +4,8 @@ import StayInvolvedCTA from '@/components/layout/StayInvolvedCTA';
 
 export const metadata = {
   title: 'Privacy Policy',
+  description: 'Read the UNSVCC privacy policy to understand how we collect, use, and protect your personal information.',
+  alternates: { canonical: 'https://unsvcc.org/privacy-policy' },
 };
 
 export default function PrivacyPolicyPage() {

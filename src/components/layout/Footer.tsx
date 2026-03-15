@@ -120,15 +120,24 @@ export default function Footer() {
                   {CONTACT_EMAIL}
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <PhoneIcon width={14} height={14} stroke="#6E6E6E" />
-                <a
-                  href={`tel:${CONTACT_PHONE.replace(/\s/g, '')}`}
-                  className="font-body text-warm-gray text-sm hover:text-impact-red"
-                  style={{ transition: 'color 0.2s' }}
-                >
-                  {CONTACT_PHONE}
-                </a>
+              <li className="flex items-start gap-3">
+                <PhoneIcon width={14} height={14} stroke="#6E6E6E" className="mt-0.5" />
+                <div className="flex flex-col gap-1">
+                  <a
+                    href={`tel:${CONTACT_PHONE.replace(/\s/g, '')}`}
+                    className="font-body text-warm-gray text-sm hover:text-impact-red"
+                    style={{ transition: 'color 0.2s' }}
+                  >
+                    {CONTACT_PHONE} <span className="text-xs text-warm-gray/70">(General Inquiry)</span>
+                  </a>
+                  <a
+                    href="tel:+14164340165"
+                    className="font-body text-warm-gray text-sm hover:text-impact-red"
+                    style={{ transition: 'color 0.2s' }}
+                  >
+                    +1 416 434 0165 <span className="text-xs text-warm-gray/70">(Membership Services)</span>
+                  </a>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <ClockIcon width={14} height={14} stroke="#6E6E6E" className="mt-0.5" />

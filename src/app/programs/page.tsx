@@ -3,10 +3,12 @@ import GrainOverlay from '@/components/ui/GrainOverlay';
 import StayInvolvedCTA from '@/components/layout/StayInvolvedCTA';
 import DonationWidget from '@/components/forms/DonationWidget';
 import ProgramsContent from '@/components/sections/programs/ProgramsContent';
-import { PROGRESS_BARS } from '@/lib/constants';
+import { FUNDING_GOALS } from '@/lib/constants';
 
 export const metadata = {
-  title: 'Programs',
+  title: 'Programs & Services for Seniors | Stratford Ontario',
+  description: 'Explore UNSVCC membership benefits and services including food resources, housing support, digital skills training, legal representation, and more for seniors in Stratford, Ontario and across Canada.',
+  alternates: { canonical: 'https://unsvcc.org/programs' },
 };
 
 export default function ProgramsPage() {
@@ -89,7 +91,7 @@ Membership Benefits and Services Give Us More Than Our Money&apos;s Worth
       {/* ==================== SEARCH + CARDS + MODAL (client) ==================== */}
       <ProgramsContent />
 
-      {/* ==================== HELP US / DONATION GOAL ==================== */}
+      {/* ==================== FUNDING NEEDS ==================== */}
       <section className="py-16 lg:py-24" style={{ background: '#FDF0ED' }}>
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <ScrollReveal>
@@ -98,33 +100,36 @@ Membership Benefits and Services Give Us More Than Our Money&apos;s Worth
                 className="font-heading text-impact-red font-bold text-2xl lg:text-3xl"
                 style={{ letterSpacing: '-0.02em' }}
               >
-                Help us empower more seniors in our community
+                We Need Your Support
               </h3>
+              <p
+                className="font-body text-warm-gray text-base lg:text-lg mt-4"
+                style={{ lineHeight: 1.8 }}
+              >
+                Our programs depend on the generosity of people like you. Help us fund the services that make a real difference in the lives of Canadian seniors.
+              </p>
             </div>
           </ScrollReveal>
 
-          {/* Progress bars */}
           <ScrollReveal delay={2}>
-            <div className="mt-12 space-y-8">
-              {PROGRESS_BARS.map((bar) => (
-                <div key={bar.label}>
-                  <div className="flex justify-between items-end mb-2">
-                    <span className="font-body font-semibold text-charcoal text-sm">
-                      {bar.label}
-                    </span>
-                    <span className="font-heading font-bold text-advocacy-teal text-lg">
-                      ${bar.current.toLocaleString()}{' '}
-                      <span className="text-warm-gray font-normal text-sm">
-                        / ${bar.goal.toLocaleString()}
-                      </span>
-                    </span>
-                  </div>
-                  <div className="progress-track">
-                    <div
-                      className="progress-fill"
-                      style={{ width: `${bar.percent}%` }}
-                    />
-                  </div>
+            <div className="mt-10 space-y-6">
+              {FUNDING_GOALS.map((item) => (
+                <div
+                  key={item.label}
+                  className="bg-white rounded-2xl p-6 sm:p-8 shadow-card text-center"
+                >
+                  <span className="font-body font-semibold text-charcoal text-sm sm:text-base block">
+                    {item.label}
+                  </span>
+                  <span
+                    className="font-heading font-extrabold text-impact-red text-3xl sm:text-4xl lg:text-5xl block mt-3"
+                    style={{ letterSpacing: '-0.02em' }}
+                  >
+                    ${item.goal.toLocaleString()}
+                  </span>
+                  <span className="font-body text-warm-gray text-sm mt-1 block">
+                    needed to fund this program
+                  </span>
                 </div>
               ))}
             </div>

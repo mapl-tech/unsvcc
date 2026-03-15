@@ -6,6 +6,21 @@ export interface Program {
 }
 
 export const programData: Record<string, Program> = {
+  foodresources: {
+    title: 'Access to Food Resources',
+    image: '/images/programs/food-program.png',
+    body: 'UNSVCC provides a variety of food programs that support older adults in maintaining healthy eating habits. The coalition will establish food support centers exclusively for seniors, providing them with enough food to eliminate the worry of having enough to eat tomorrow. This is not a food bank program. UNSVCC Food Support warehouse will purchase and accept donated unsold safe-to-eat surplus and bulk quantities from food suppliers and farmers to maintain the integrity of our food programs. We are buying fresh overstock and surplus food items in bulk quantities at a low cost from food suppliers, manufacturers, farmers, etc. These are products that don\'t meet supermarket specifications, such as labelling, but are good and safe to eat. These foods are then made available to UNSVCC members through programs like our Grocery bag food programs.',
+  },
+  digitalsupport: {
+    title: 'Computers & Digital Support Services',
+    image: '/images/programs/digital-skills.jpg',
+    body: 'UNSVCC provides computers and digital support services to help seniors stay connected and access essential online resources. The program equips seniors with the devices and technical assistance they need to navigate the digital world, from setting up computers and tablets to troubleshooting issues and accessing online government services, banking, and telehealth platforms.',
+  },
+  digitalskills: {
+    title: 'Digital Skills Training Program for Seniors',
+    image: '/images/programs/non-political.jpg',
+    body: 'The program aims to support seniors by providing digital literacy training. These skills can help seniors access community resources through digital platforms. Training seniors will enhance their quality of life by improving their social connections.\n\nThe project further promotes the social inclusion of seniors by providing them with volunteer opportunities that will help them expand their support networks and contribute to their communities. Digital Skills training and support for the Seniors program focuses on enhancing digital skills. The program will run 3 days a week from the National Senior-Citizen Resources and Support Response Centers Monday \u2013 Thursday for 10:00 am \u2013 12:30 pm.\n\nWhat Participants will learn: Computer basics, Smartphone usage, Internet Browsing, Applications for daily use, E-banking, Connecting with volunteer resources, Teams, Emailing, Facebook, Texting. Individuals aged 55 and above are eligible to apply for the program. Proof of age is required for registration. The program is FREE. However, donations are welcome.',
+  },
   advocating: {
     title: 'Advocating for Seniors',
     image: '/images/programs/advocating.jpg',
@@ -55,11 +70,6 @@ export const programData: Record<string, Program> = {
     title: 'Keep Seniors Informed',
     image: '/images/programs/keep-informed.jpg',
     body: 'UNSVCC keeps seniors informed on services and programs that could benefit or affect elderly people, information that wouldn\'t normally be made available to the public. Keeping seniors informed is crucial for their well-being and can be achieved through various methods tailored to their needs and preferences. We tried to use clear communication, provide access to reliable information sources, and encourage social engagement.',
-  },
-  foodresources: {
-    title: 'Access to Food Resources',
-    image: '/images/programs/food-program.png',
-    body: 'UNSVCC provides a variety of food programs that support older adults in maintaining healthy eating habits. The coalition will establish food support centers exclusively for seniors, providing them with enough food to eliminate the worry of having enough to eat tomorrow. This is not a food bank program. UNSVCC Food Support warehouse will purchase and accept donated unsold safe-to-eat surplus and bulk quantities from food suppliers and farmers to maintain the integrity of our food programs. We are buying fresh overstock and surplus food items in bulk quantities at a low cost from food suppliers, manufacturers, farmers, etc. These are products that don\'t meet supermarket specifications, such as labelling, but are good and safe to eat. These foods are then made available to UNSVCC members through programs like our Grocery bag food programs.',
   },
   grocery: {
     title: 'Grocery Bag Food Program',
@@ -148,14 +158,9 @@ export const programData: Record<string, Program> = {
     body: 'UNSVCC provides mentorship and coaching workshop programs that bring seniors and younger people together, a place we call the Wisdom-Center, where seniors can effectively transfer their skills and knowledge to the next generation through our mentorship and intergenerational learning programs. It is a program where seniors share their life experiences in Mentoring and coaching with younger individuals, by guiding them in their chosen field or offering advice based on their life experience. For example, a retired construction engineer could mentor a younger engineer, share technical expertise, and provide insight into project management.',
   },
   seniorsdrive: {
-    title: 'Seniors Drive Too — Car Repair Program',
+    title: 'Seniors Drive Too: Car Repair Program',
     image: '/images/programs/seniors-drive.jpg',
     body: 'When we think about necessities, our minds go to water, food, and shelter. And while these are the basics needed for survival, you also need other resources to get by in our society today. One of the most necessary and hardest things for families in need to manage is a reliable vehicle. If you\'re already struggling to make ends meet, your car breaking down could be the final straw for your finances.\n\nWhen disaster strikes, you may not be able to afford the repairs needed to keep your car on the road. For seniors who need auto repair and maintenance services, your coalition membership can keep them driving. The Coalition Automobile Maintenance Services program provides its members with access to garages that assist with car repairs for low-income Seniors. The coalition automobile focuses on finding reputable and affordable garages with positive reviews, especially those that emphasize clear communication and fair pricing. These include local auto repair shops and mobile mechanics. Depending on the nature of the repairs you need to get done, the garage will provide our members with discounts of up to 25% off labour costs. We will help you find a way; membership has its privileges. Finding help with Car Repair is just one of the things we do for our members. Seniors need to drive too: Let\'s help them stay on the road.',
-  },
-  digitalskills: {
-    title: 'Digital Skills Training Program for Seniors',
-    image: '/images/programs/digital-skills.jpg',
-    body: 'The program aims to support seniors by providing digital literacy training. These skills can help seniors access community resources through digital platforms. Training seniors will enhance their quality of life by improving their social connections.\n\nThe project further promotes the social inclusion of seniors by providing them with volunteer opportunities that will help them expand their support networks and contribute to their communities. Digital Skills training and support for the Seniors program focuses on enhancing digital skills. The program will run 3 days a week from the National Senior-Citizen Resources and Support Response Centers Monday \u2013 Thursday for 10:00 am \u2013 12:30 pm.\n\nWhat Participants will learn: Computer basics, Smartphone usage, Internet Browsing, Applications for daily use, E-banking, Connecting with volunteer resources, Teams, Emailing, Facebook, Texting. Individuals aged 55 and above are eligible to apply for the program. Proof of age is required for registration. The program is FREE. However, donations are welcome.',
   },
   nonpolitical: {
     title: 'Non-Political Leadership Representation',

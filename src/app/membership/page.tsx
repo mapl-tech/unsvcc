@@ -5,7 +5,9 @@ import StayInvolvedCTA from '@/components/layout/StayInvolvedCTA'
 import MembershipForm from '@/components/forms/MembershipForm'
 
 export const metadata: Metadata = {
-  title: 'Membership',
+  title: 'Become a Member | Senior Benefits & Services Stratford Ontario',
+  description: 'Join UNSVCC and access affordable housing, grocery programs, shopping discounts, legal services, and more for seniors in Stratford, Ontario and across Canada.',
+  alternates: { canonical: 'https://unsvcc.org/membership' },
 }
 
 export default function MembershipPage() {
@@ -63,7 +65,7 @@ export default function MembershipPage() {
               className="font-body text-warm-gray text-base mt-5"
               style={{ lineHeight: 1.9 }}
             >
-              Join us in creating lasting change — register now and be part of the
+              Join us in creating lasting change. Register now and be part of the
               impact!
             </p>
           </ScrollReveal>
