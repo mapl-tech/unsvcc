@@ -49,34 +49,34 @@ export const PROGRESS_BARS = [
 
 export const FEATURED_PROGRAMS = [
   {
-    title: 'Grocery Bag Food Program',
-    image: '/images/programs/food-program.png',
-    description: 'The Coalition Grocery Bag Food Program is designed to give seniors access to food on a weekly or as needed basis for a $25 donation for a bag of groceries valued up to $100 per bag. This is not a food bank program; our services are exclusive to coalition members.',
+    title: 'Advocating for Seniors',
+    image: '/images/programs/advocating.jpg',
+    description: 'The United Senior Citizen Voice for Change Coalition addresses senior-citizen poverty, supporting individuals and communities, advocating for policy changes, raising awareness about the root cause of senior-citizen poverty, finding resources, creating solutions, and fighting for those who cannot fight for themselves.',
   },
   {
-    title: 'Housing Support',
-    image: '/images/programs/housing.png',
-    description: 'The Coalition Housing Support program provides members with rental apartment information stored in our national database for rent through the goodwill of some residential property management companies and building owners.',
-  },
-  {
-    title: 'Support Line',
+    title: 'Help Support Line',
     image: '/images/programs/support-line.png',
-    description: 'This is for when a member has a problem and doesn\'t know what to do. We are here to answer their questions and help if we can. We will work with all levels of government agencies, large and small businesses, and individuals to get the information, answers, and favourable results for our members.',
+    description: 'Take calls from seniors needing assistance, such as crisis intervention, food, housing, and we help if we can, or make referrals to other community organizations. Our support line offers a range of services, including emotional support and information about available resources.',
   },
   {
-    title: 'Legal Services',
-    image: '/images/programs/legal.png',
-    description: 'The United Senior Citizen Voice-for-Change Coalition gives its members easy access to professional and affordable legal advice and representation at reduced rates from a group of panel lawyers and paralegal services.',
+    title: 'Housing Challenges Facing Seniors',
+    image: '/images/programs/housing.png',
+    description: 'The coalition housing database programs provide seniors with information on homes available for rent throughout our national rental apartment database, with rent payment up to 30% below market value.',
   },
   {
-    title: 'Group Insurance Support',
-    image: '/images/programs/group-insurance.png',
-    description: 'Membership gives you exclusive access to group insurance rates on home, auto, and content insurance not available to everyone. The Coalition does not provide information on any insurance products or services. Members are referred to a selected group of insurance providers and business partners in support of the Coalition programs and services.',
+    title: 'Access to Food Resources',
+    image: '/images/programs/food-program.png',
+    description: 'UNSVCC provides a variety of food programs that support older adults in maintaining healthy eating habits. The coalition will establish food support centers exclusively for seniors, providing them with enough food to eliminate the worry of having enough to eat tomorrow.',
   },
   {
-    title: 'Retirement Planning Support',
-    image: '/images/programs/retirement.png',
-    description: 'No matter where you are on your journey to retirement, the transition from work to retirement is necessary financially. The Coalition will host retirement planning workshops with representatives from different groups and organizations to provide services and get feedback on people\'s feelings regarding retirement.',
+    title: 'Health and Wellness Support',
+    image: '/images/programs/health-wellness.jpg',
+    description: 'The Coalition Family Support Wellness and Safety Intervention team provides home visitation or telephone reassurance checks on a senior citizen to determine the wellness of that person.',
+  },
+  {
+    title: 'Digital Skills Training Program',
+    image: '/images/programs/digital-skills.jpg',
+    description: 'The program aims to support seniors by providing digital literacy training. These skills can help seniors access community resources through digital platforms and enhance their quality of life by improving their social connections.',
   },
 ]
 

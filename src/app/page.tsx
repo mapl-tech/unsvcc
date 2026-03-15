@@ -27,7 +27,7 @@ export default function HomePage() {
                 className="font-body text-sm lg:text-base mb-4 lg:text-white/80 text-charcoal"
                 style={{ lineHeight: 1.7, maxWidth: '380px' }}
               >
-                Free community-based advocacy, resources, and support for senior citizens across our communities.
+                Building a Canada that values and supports seniors
               </p>
               <h1
                 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[3.5rem] xl:text-[4rem] lg:text-white text-impact-red leading-[1.06]"

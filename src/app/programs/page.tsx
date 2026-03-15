@@ -36,9 +36,7 @@ export default function ProgramsPage() {
                 textShadow: '0 2px 12px rgba(0,0,0,0.25)',
               }}
             >
-              Inspired To Network,
-              <br />
-              Change Through Action
+Membership Benefits and Services Give Us More Than Our Money&apos;s Worth
             </h1>
           </ScrollReveal>
         </div>
@@ -53,7 +51,7 @@ export default function ProgramsPage() {
                 className="font-heading font-extrabold text-3xl lg:text-4xl text-charcoal"
                 style={{ letterSpacing: '-0.02em' }}
               >
-                Senior Voices Matter
+                Here Is How We Help
               </h2>
               <p
                 className="font-body text-warm-gray text-base lg:text-lg mt-6"
