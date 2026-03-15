@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'UNSVCC' }],
   creator: 'United Senior Citizen Voice for Change Coalition',
   publisher: 'UNSVCC',
+  verification: {
+    google: '5Z_-OzD7dsMhdRX8XaQifgDdMootlTrBxP2ZZMxD8oE',
+  },
   icons: {
     icon: '/favicon.svg',
   },
