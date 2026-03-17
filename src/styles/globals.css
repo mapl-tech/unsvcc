@@ -579,9 +579,9 @@
     background: rgba(0, 0, 0, 0.6);
     z-index: 200;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    padding: 24px;
+    padding: 0;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease;
@@ -592,16 +592,31 @@
   }
   .program-modal {
     background: #FFFFFF;
-    border-radius: 20px;
-    max-width: 680px;
+    border-radius: 20px 20px 0 0;
     width: 100%;
-    max-height: 85vh;
+    max-height: 92vh;
     overflow-y: auto;
-    transform: translateY(24px);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-overflow-scrolling: touch;
   }
   .program-modal-overlay.active .program-modal {
     transform: translateY(0);
+  }
+  @media (min-width: 640px) {
+    .program-modal-overlay {
+      align-items: center;
+      padding: 24px;
+    }
+    .program-modal {
+      border-radius: 20px;
+      max-width: 680px;
+      max-height: 85vh;
+      transform: translateY(24px);
+    }
+    .program-modal-overlay.active .program-modal {
+      transform: translateY(0);
+    }
   }
 
   /* ---- Search input (programs) ---- */

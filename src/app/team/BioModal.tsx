@@ -114,7 +114,7 @@ export default function BioModal() {
           />
           {/* Modal content */}
           <div
-            className="absolute inset-4 sm:inset-8 lg:inset-16 xl:inset-y-12 xl:inset-x-[15%] bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="absolute inset-0 sm:inset-4 md:inset-8 lg:inset-16 xl:inset-y-12 xl:inset-x-[15%] bg-white sm:rounded-2xl shadow-2xl flex flex-col overflow-hidden"
             style={{
               transform: isAnimating ? 'translateY(0)' : 'translateY(20px)',
               opacity: isAnimating ? 1 : 0,
@@ -149,30 +149,26 @@ export default function BioModal() {
               </div>
               <button
                 onClick={closeModal}
-                className="w-10 h-10 flex items-center justify-center rounded-full cursor-pointer"
+                className="w-10 h-10 flex items-center justify-center rounded-full cursor-pointer flex-shrink-0 hover:bg-gray-200 active:scale-95"
                 style={{
                   background: '#F4F4F4',
                   border: 'none',
-                  transition: 'background 0.2s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#E8E8E8';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = '#F4F4F4';
+                  transition: 'background 0.2s ease, transform 0.15s',
                 }}
                 aria-label="Close"
               >
                 <svg
-                  width="20"
-                  height="20"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#333"
-                  strokeWidth="2"
+                  stroke="#555"
+                  strokeWidth="2.5"
                   strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  <line x1="15" y1="5" x2="5" y2="15" />
-                  <line x1="5" y1="5" x2="15" y2="15" />
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               </button>
             </div>

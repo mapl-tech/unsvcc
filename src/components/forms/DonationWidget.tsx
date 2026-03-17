@@ -78,7 +78,7 @@ export default function DonationWidget() {
   return (
     <div>
       {/* Donation type toggle */}
-      <div className="flex items-center justify-center gap-8 sm:gap-10">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-10">
         <label className="flex items-center gap-2.5 cursor-pointer">
           <input
             type="radio"
@@ -108,7 +108,7 @@ export default function DonationWidget() {
       </div>
 
       {/* Amount buttons */}
-      <div className="grid grid-cols-4 gap-3 sm:gap-4 mt-10">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-10">
         {PRESET_AMOUNTS.map((amount) => (
           <button
             key={amount}

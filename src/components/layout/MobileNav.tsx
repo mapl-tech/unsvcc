@@ -24,11 +24,20 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
   }, [isOpen]);
 
   return (
-    <div
-      className={`mobile-panel fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-50 lg:hidden ${
-        isOpen ? 'open' : ''
-      }`}
-    >
+    <>
+      {/* Backdrop overlay */}
+      <div
+        className={`fixed inset-0 bg-black/40 z-40 lg:hidden transition-opacity duration-300 ${
+          isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+        onClick={onClose}
+        aria-hidden="true"
+      />
+      <div
+        className={`mobile-panel fixed top-0 right-0 bottom-0 w-80 max-w-[85vw] bg-white shadow-2xl z-50 lg:hidden ${
+          isOpen ? 'open' : ''
+        }`}
+      >
       {/* Header */}
       <div className="flex items-center justify-between p-6 border-b border-soft-gray">
         <span className="font-heading text-impact-red font-bold text-lg">
@@ -36,11 +45,11 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
         </span>
         <button
           onClick={onClose}
-          className="flex items-center justify-center"
-          style={{ minWidth: '44px', minHeight: '44px' }}
+          className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 active:scale-95"
+          style={{ minWidth: '44px', minHeight: '44px', transition: 'background 0.2s, transform 0.15s' }}
           aria-label="Close menu"
         >
-          <CloseIcon />
+          <CloseIcon width={20} height={20} stroke="#555" strokeWidth={2.5} />
         </button>
       </div>
 
@@ -120,5 +129,6 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
         </div>
       </div>
     </div>
+    </>
   );
 }

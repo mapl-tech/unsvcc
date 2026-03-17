@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { programData, type Program } from '@/lib/program-data';
-import { SearchIcon, ArrowRightIcon, CloseIcon } from '@/components/icons';
+import { SearchIcon, ArrowRightIcon, CloseIcon, PhoneIcon, MailIcon } from '@/components/icons';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 
 const PROGRAM_KEYS = Object.keys(programData);
@@ -142,23 +142,23 @@ export default function ProgramsContent() {
               <img
                 src={activeProgram.image}
                 alt={activeProgram.title}
-                className="w-full h-56 sm:h-64 object-cover rounded-t-2xl"
+                className="w-full h-44 sm:h-56 md:h-64 object-cover rounded-t-2xl sm:rounded-t-2xl"
               />
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/90 flex items-center justify-center shadow-lg"
+                className="absolute top-3 right-3 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center shadow-md hover:bg-gray-100 active:scale-95"
                 style={{
-                  minWidth: '44px',
-                  minHeight: '44px',
-                  transition: 'background 0.2s',
+                  minWidth: '36px',
+                  minHeight: '36px',
+                  transition: 'background 0.2s, transform 0.15s',
                 }}
                 aria-label="Close modal"
               >
-                <CloseIcon width={18} height={18} stroke="#333" strokeWidth={2.5} />
+                <CloseIcon width={16} height={16} stroke="#555" strokeWidth={2.5} />
               </button>
             </div>
-            <div className="p-8">
-              <h3 className="font-heading font-bold text-charcoal text-xl lg:text-2xl leading-snug">
+            <div className="p-5 sm:p-8">
+              <h3 className="font-heading font-bold text-charcoal text-lg sm:text-xl lg:text-2xl leading-snug">
                 {activeProgram.title}
               </h3>
               <div
@@ -170,22 +170,40 @@ export default function ProgramsContent() {
                     {paragraph}
                   </p>
                 ))}
-                {activeProgram.link && (
-                  <a
-                    href={activeProgram.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-gold mt-6 inline-flex text-sm"
-                    style={{
-                      padding: '10px 28px',
-                      minHeight: '42px',
-                      fontSize: '13px',
-                    }}
-                  >
-                    Visit Website
-                    <ArrowRightIcon width={14} height={14} style={{ marginLeft: '6px' }} />
-                  </a>
-                )}
+                <div
+                  className="mt-8 pt-6 border-t"
+                  style={{ borderColor: '#ECECEC' }}
+                >
+                  <p className="font-heading font-bold text-charcoal text-sm">
+                    Want to learn more about this program?
+                  </p>
+                  <div className="mt-3 space-y-2">
+                    <a
+                      href="tel:+15197033443"
+                      className="flex items-center gap-3 text-sm font-body text-warm-gray hover:text-advocacy-teal"
+                      style={{ transition: 'color 0.2s' }}
+                    >
+                      <PhoneIcon width={15} height={15} stroke="#0E7C7B" strokeWidth={2} className="flex-shrink-0" />
+                      <span><strong className="text-charcoal">519-703-3443</strong> (General Inquiry)</span>
+                    </a>
+                    <a
+                      href="tel:+14164340165"
+                      className="flex items-center gap-3 text-sm font-body text-warm-gray hover:text-advocacy-teal"
+                      style={{ transition: 'color 0.2s' }}
+                    >
+                      <PhoneIcon width={15} height={15} stroke="#0E7C7B" strokeWidth={2} className="flex-shrink-0" />
+                      <span><strong className="text-charcoal">416-434-0165</strong> (Membership Services)</span>
+                    </a>
+                    <a
+                      href="mailto:info@unsvcc.org"
+                      className="flex items-center gap-3 text-sm font-body text-warm-gray hover:text-advocacy-teal"
+                      style={{ transition: 'color 0.2s' }}
+                    >
+                      <MailIcon width={15} height={15} stroke="#0E7C7B" strokeWidth={2} className="flex-shrink-0" />
+                      <strong className="text-charcoal">info@unsvcc.org</strong>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
