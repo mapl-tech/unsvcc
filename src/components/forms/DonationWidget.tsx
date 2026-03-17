@@ -8,7 +8,11 @@ export default function DonationWidget() {
   const [donationType, setDonationType] = useState<'onetime' | 'monthly'>('onetime');
   const [selectedAmount, setSelectedAmount] = useState<number | null>(58);
   const [customAmount, setCustomAmount] = useState('');
-  const [submitState, setSubmitState] = useState<'idle' | 'processing' | 'success'>('idle');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [submitState, setSubmitState] = useState<'idle' | 'processing' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const selectPresetAmount = (amount: number) => {
     setSelectedAmount(amount);
@@ -19,26 +23,56 @@ export default function DonationWidget() {
     setSelectedAmount(null);
   };
 
-  const handleDonate = () => {
-    setSubmitState('processing');
+  const getFinalAmount = (): number => {
+    if (selectedAmount) return selectedAmount;
+    const custom = parseFloat(customAmount);
+    return isNaN(custom) ? 0 : custom;
+  };
 
-    setTimeout(() => {
-      setSubmitState('success');
-      setTimeout(() => {
-        setSubmitState('idle');
-      }, 2500);
-    }, 1500);
+  const handleDonate = async () => {
+    const amount = getFinalAmount();
+    if (amount < 1) {
+      setErrorMessage('Please select or enter a donation amount.');
+      setSubmitState('error');
+      return;
+    }
+
+    setSubmitState('processing');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount,
+          donationType,
+          email: email || undefined,
+          name: [firstName, lastName].filter(Boolean).join(' ') || undefined,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Something went wrong');
+      }
+
+      if (data.url) {
+        window.location.href = data.url;
+      }
+    } catch (err) {
+      setErrorMessage(err instanceof Error ? err.message : 'Failed to process donation. Please try again.');
+      setSubmitState('error');
+      setTimeout(() => setSubmitState('idle'), 3000);
+    }
   };
 
   const getButtonText = () => {
-    if (submitState === 'processing') return 'PROCESSING...';
-    if (submitState === 'success') return 'THANK YOU FOR YOUR DONATION!';
+    if (submitState === 'processing') return 'REDIRECTING TO PAYMENT...';
+    const amount = getFinalAmount();
+    if (amount > 0) return `DONATE $${amount} CAD`;
     return 'DONATE NOW';
-  };
-
-  const getButtonBg = () => {
-    if (submitState === 'success') return '#0E7C7B';
-    return '#D4883E';
   };
 
   return (
@@ -112,27 +146,38 @@ export default function DonationWidget() {
             type="text"
             placeholder="First Name"
             className="donate-form-input"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
           />
           <input
             type="text"
             placeholder="Last Name"
             className="donate-form-input"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
           />
         </div>
         <input
           type="email"
           placeholder="Email Address (for tax receipt)"
           className="donate-form-input"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
+
+        {/* Error message */}
+        {submitState === 'error' && errorMessage && (
+          <p className="font-body text-sm text-red-600 text-center">{errorMessage}</p>
+        )}
 
         {/* Donate button */}
         <button
           type="button"
           className="w-full mt-4 font-heading font-bold text-base uppercase cursor-pointer"
           onClick={handleDonate}
-          disabled={submitState !== 'idle'}
+          disabled={submitState === 'processing'}
           style={{
-            background: getButtonBg(),
+            background: '#D4883E',
             color: '#FFFFFF',
             border: 'none',
             borderRadius: '12px',
@@ -166,6 +211,10 @@ export default function DonationWidget() {
         >
           {getButtonText()}
         </button>
+
+        <p className="font-body text-xs text-warm-gray text-center mt-3">
+          Secure payment processed by Stripe. All donations are in Canadian dollars (CAD).
+        </p>
       </div>
     </div>
   );
