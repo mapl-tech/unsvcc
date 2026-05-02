@@ -331,7 +331,7 @@
   }
   .feature-pill svg { flex-shrink: 0; }
 
-  /* ---- Benefit card (Centre page) ---- */
+  /* ---- Benefit card ---- */
   .benefit-card {
     background: #FFFFFF;
     border-radius: 16px;

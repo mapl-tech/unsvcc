@@ -13,7 +13,6 @@ export const NAV_LINKS = [
     dropdown: [
       { label: 'Our Mandate', href: '/about' },
       { label: 'Our Team', href: '/team' },
-      { label: 'UNSVCC Centre', href: '/centre' },
     ],
   },
   { label: 'Programs', href: '/programs' },

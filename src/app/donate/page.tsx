@@ -77,7 +77,7 @@ export default function DonatePage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {/* Community Programs */}
             <ScrollReveal delay={1}>
               <div className="impact-card shadow-card">
@@ -135,24 +135,6 @@ export default function DonatePage() {
               </div>
             </ScrollReveal>
 
-            {/* UNSVCC Centre */}
-            <ScrollReveal delay={4}>
-              <div className="impact-card shadow-card">
-                <div
-                  className="w-14 h-14 rounded-2xl mx-auto flex items-center justify-center"
-                  style={{ background: '#FDF0ED' }}
-                >
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E74A30" strokeWidth="2" strokeLinecap="round">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-                    <polyline points="9 22 9 12 15 12 15 22" />
-                  </svg>
-                </div>
-                <h4 className="font-heading font-bold text-charcoal text-base mt-5">UNSVCC Centre</h4>
-                <p className="font-body text-warm-gray text-sm mt-2" style={{ lineHeight: 1.7 }}>
-                  Help build and sustain our community centre in Stratford, Ontario, a safe space for seniors to connect, learn, and thrive.
-                </p>
-              </div>
-            </ScrollReveal>
           </div>
         </div>
       </section>

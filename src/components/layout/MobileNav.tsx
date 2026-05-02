@@ -75,14 +75,6 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
         >
           Our Team
         </Link>
-        <Link
-          href="/centre"
-          onClick={onClose}
-          className="font-body text-warm-gray font-medium text-base py-2 px-4 pl-8 rounded-lg"
-          style={{ transition: 'background 0.2s' }}
-        >
-          UNSVCC Centre
-        </Link>
 
         {/* Main links */}
         <Link
